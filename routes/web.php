@@ -11,3 +11,7 @@ Route::group(['prefix'=> '/history'], function () {
 
     Route::get('/',[HistoryController::class,'index'])->name('history.index');
 });
+
+Route::get('/scada', function () {
+    return view('scada.index');
+})->name('scada');
