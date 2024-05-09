@@ -15,3 +15,7 @@ Route::group(['prefix'=> '/history'], function () {
 Route::get('/scada', function () {
     return view('scada.index');
 })->name('scada');
+
+Route::get('/draw', function () {
+    return view('scada.testDraw');
+})->name('draw');
