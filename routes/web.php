@@ -19,3 +19,7 @@ Route::get('/scada', function () {
 Route::get('/draw', function () {
     return view('scada.testDraw');
 })->name('draw');
+
+Route::get('/col', function () {
+    return view('scada.testColumn');
+})->name('col');

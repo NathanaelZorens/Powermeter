@@ -25,7 +25,7 @@ $line = "s";
 
     <div class="m-2">
 
-        <div class="bg-gray-800 p-0 w-96 md:w-auto h-auto m-4 flex">
+        <div class="bg-gray-800 p-0 w-fit md:w-fit h-auto m-4 grid grid-cols-3">
             <div class="m-0 p-0 bg-gray-200 w-48">
                 <div class="absolute">
                     <h4 class="text-white text-lg font-bold">test</h4>
@@ -46,10 +46,10 @@ $line = "s";
                 </svg>
             </div>
             <!-- ========================================= -->
-            
-            <svg width="100" >
-                    <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
-                </svg>
+
+            <svg width="192">
+                <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
+            </svg>
 
             <div>
                 <div class="absolute">
@@ -66,13 +66,28 @@ $line = "s";
                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="red">
                 </svg>
 
-                
+
             </div>
         </div>
 
         <p> <?php echo $wid, " ", $hei; ?> </p>
 
         <?php echo $line ?>
+
+        <div class="bg-blue-900 grid grid-cols-5 w-fit gap-2 p-2">
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">A</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">B</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">C</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">D</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">E</div>
+
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">F</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">G</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">H</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">I</div>
+            <div class="w-5 h-5 bg-yellow-400 font-bold text-black text-center">J</div>
+
+        </div>
 
 
 
