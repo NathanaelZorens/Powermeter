@@ -26,7 +26,7 @@ $line = "s";
     <div class="m-2">
 
         <div class="bg-gray-800 p-0 w-fit md:w-fit h-auto m-4 grid grid-cols-3">
-            <div class="m-0 p-0 bg-gray-200 w-48">
+            <div class="m-0 p-0 bg-gray-200 w-48 h-fit">
                 <div class="absolute">
                     <h4 class="text-white text-lg font-bold">test</h4>
                     <p>Test Test</p>
@@ -41,13 +41,11 @@ $line = "s";
                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="red">
                 </svg>
 
-                <svg class="" height="100">
-                    <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
-                </svg>
+                
             </div>
             <!-- ========================================= -->
 
-            <svg width="192">
+            <svg width="192" height="100" class="bg-white">
                 <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
             </svg>
 
@@ -68,6 +66,9 @@ $line = "s";
 
 
             </div>
+            <svg class="" height="100" width="192">
+                    <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
+                </svg>
         </div>
 
         <p> <?php echo $wid, " ", $hei; ?> </p>
@@ -90,7 +91,174 @@ $line = "s";
         </div>
 
 
+        <div class="bg-green-700 grid grid-cols-5 w-fit md:w-fit h-auto gap-1 p-1 m-4">
+            <!-- ================Rectangle=========== -->
+            <div class="w-fit h-fit m-0 bg-white">
+                <div class="absolute">
+                    <h4 class="text-white text-lg font-bold">Rect 1</h4>
+                    <p>Rect 1</p>
 
+                    <svg height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 15,19 5,19" style="fill:lime;stroke:purple;stroke-width:3" />
+                    </svg>
+
+                </div>
+
+                <svg class="bg-white" height="100" width="192" viewBox="0 0 192 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="purple">
+                </svg>
+            </div>
+            <!-- ================Rectangle=========== -->
+
+            <!-- ================HorizLine============== -->
+            <div class="w-fit h-fit m-0">
+                <svg width="192" height="100">
+                    <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
+                </svg>
+            </div>
+            <!-- ================HorizLine============== -->
+
+            <!-- ================Rectangle=========== -->
+            <div>
+                <div class="absolute">
+                    <h4 class="text-white text-lg font-bold">Rect 1</h4>
+                    <p>Rect 1</p>
+
+                    <svg height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 15,19 5,19" style="fill:lime;stroke:purple;stroke-width:3" />
+                    </svg>
+
+                </div>
+
+                <svg class="bg-white" height="100" width="192" viewBox="0 0 192 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="purple">
+                </svg>
+            </div>
+            <!-- ================Rectangle=========== -->
+
+
+            <!-- ================HorizLine============== -->
+            <svg width="192" height="100">
+                <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
+            </svg>
+            <!-- ================HorizLine============== -->
+
+
+
+            <!-- ================Rectangle=========== -->
+            <div>
+                <div class="absolute">
+                    <h4 class="text-white text-lg font-bold">Rect 1</h4>
+                    <p>Rect 1</p>
+
+                    <svg height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 15,19 5,19" style="fill:lime;stroke:purple;stroke-width:3" />
+                    </svg>
+
+                </div>
+
+                <svg class="bg-white" height="100" width="192" viewBox="0 0 192 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="purple">
+                </svg>
+            </div>
+            <!-- ================Rectangle=========== -->
+
+
+            <!-- ================VerticLine============== -->
+            <div>
+                <svg class="" width="192" height="100">
+                    <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
+                </svg>
+            </div>
+            <!-- ================VerticLine============== -->
+
+            <!-- ================BlankSpace============== -->
+
+            <div>
+                <svg class="" width="192" height="100">
+                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+
+                </svg>
+            </div>
+
+            <!-- ================BlankSpace============== -->
+            
+            <!-- ================VerticLine============== -->
+            <div>
+                <svg class="" width="192" height="100">
+                    <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
+                </svg>
+            </div>
+            <!-- ================VerticLine============== -->
+
+
+            <!-- ================BlankSpace============== -->
+
+            <div>
+                <svg class="" width="192" height="100">
+                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+
+                </svg>
+            </div>
+
+            <!-- ================BlankSpace============== -->
+
+
+            <!-- ================BlankSpace============== -->
+
+            <div>
+                <svg class="" width="192" height="100">
+                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+
+                </svg>
+            </div>
+
+            <!-- ================BlankSpace============== -->
+
+            <!-- ================Rectangle=========== -->
+            <div>
+                <div class="absolute">
+                    <h4 class="text-white text-lg font-bold">Rect 1</h4>
+                    <p>Rect 1</p>
+
+                    <svg height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 15,19 5,19" style="fill:lime;stroke:purple;stroke-width:3" />
+                    </svg>
+
+                </div>
+
+                <svg class="bg-white" height="100" width="192" viewBox="0 0 192 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="purple">
+                </svg>
+            </div>
+            <!-- ================Rectangle=========== -->
+
+
+             <!-- ================HorizLine============== -->
+             <svg width="192" height="100">
+                <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
+            </svg>
+            <!-- ================HorizLine============== -->
+
+            <!-- ================Rectangle=========== -->
+            <div>
+                <div class="absolute">
+                    <h4 class="text-white text-lg font-bold">Rect 1</h4>
+                    <p>Rect 1</p>
+
+                    <svg height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 15,19 5,19" style="fill:lime;stroke:purple;stroke-width:3" />
+                    </svg>
+
+                </div>
+
+                <svg class="bg-white" height="100" width="192" viewBox="0 0 192 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="purple">
+                </svg>
+            </div>
+            <!-- ================Rectangle=========== -->
+
+        </div>
 
 
 
