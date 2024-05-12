@@ -23,3 +23,7 @@ Route::get('/draw', function () {
 Route::get('/col', function () {
     return view('scada.testColumn');
 })->name('col');
+
+Route::get('/comp', function () {
+    return view('scada.testComp');
+})->name('comp');
