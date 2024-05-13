@@ -18,6 +18,11 @@ $n2 = "Rect No 2";
 $n3 = "Rect No 3";
 
 
+$d1 = "A";
+$d2 = "B";
+$d3 = "C";
+
+
 
 ?>
 
@@ -29,15 +34,15 @@ $n3 = "Rect No 3";
     <div class="bg-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-1 m-4">
 
         <!-- row1 -->
-        <x-block-rect color="red" :name="$n1"></x-block-rect>
+        <x-block-rect colorText="white" color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3" ></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
-        <x-block-rect color="blue" :name="$n2"></x-block-rect>
+        <x-block-rect colorText="white" color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
-        <x-block-rect color="yellow" :name="$n3"></x-block-rect>
+        <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <!-- row2 -->
         <x-block-line-v></x-block-line-v>
@@ -53,15 +58,15 @@ $n3 = "Rect No 3";
 
         <!-- row3 -->
 
-        <x-block-rect color="yellow" :name="$n3"></x-block-rect>
+        <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <x-block-blank></x-block-blank>
 
-        <x-block-rect color="red" :name="$n1"></x-block-rect>
+        <x-block-rect colorText="white" color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
-        <x-block-rect color="blue" :name="$n2"></x-block-rect>
+        <x-block-rect colorText="white" color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
 
 

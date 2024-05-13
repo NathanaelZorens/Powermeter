@@ -14,7 +14,13 @@ class BlockRect extends Component
     public function __construct(
 
         public string $color,
-        public string $name
+        
+
+        public string $name,
+
+        public string $desc1,
+        public string $desc2,
+        public string $desc3
 
     )
     {

@@ -5,99 +5,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="www.[yourdomain].com/FamilyTree.js"></script>
+
+
 </head>
 
-<body class="bg-black flex flex-col gap-y-4">
-    
-    <div class="text-white  p-5 m-3 w-1/2 h-2/3 lg:w-auto  ">
+<?php
 
-        <div class="bg-gray-500 border-dashed border-2 border-white p-5 h-auto">
-            test 2
+$n1 = "Unit No 1";
+$n2 = "Unit No 2";
+$n3 = "Unit No 3";
 
-            
-
-            <script src="https://balkan.app/js/familytree.js"></script>
-            <div id="tree" />
-
-            <script>
-                //JavaScript
-                FamilyTree.CLINK_CURVE = 2;
-                
-                var family = new FamilyTree(document.getElementById("tree"), {
-                    template: "tommy",
-                    mouseScrool: FamilyTree.none,
-                    clinks: [{
-                            from: 1,
-                            to: 2,
-                            label: 'text'
-                        },
-                        {
-                            from: 2,
-                            to: 3,
-                            template: 'blue'
-                        },
-                        {
-                            from: 3,
-                            to: 4,
-                            template: 'yellow',
-                            label: 'lorem ipsum'
-                        },
-                        {
-                            from: 4,
-                            to: 5,
-                            template: 'yellow',
-                            label: 'lorem ipsum'
-                        },
-                        {
-                            from: 5,
-                            to: 4,
-                            template: 'yellow',
-                            label: 'lorem ipsum'
-                        },
-                    ],
-                    nodeBinding: {
-                        field_0: "name"
-                    }
-                });
-
-                family.load([{
-                        id: 1,
-                        
-                        name: "Amber McKenzie",
-                        gender: "female"
-                    },
-                    {
-                        id: 2,
-                        
-                        name: "Ava Field",
-                        gender: "male"
-                    },
-                    {
-                        id: 3,
-                        
-                        name: "Ava Field",
-                        gender: "female"
-                    },
-
-                    {
-                        id: 4,
-                        name: "Peter Stevens",
-                        gender: "male"
-                    },
-                    {
-                        id: 5,
-                        
-                        name: "Robert Stevens",
-                        gender: "male"
-                    }
-                ]);
-            </script>
+$d1="A";
+$d2="B";
+$d3="C";
 
 
+?>
 
-        </div>
+<body class="flex flex-col gap-y-4 bg-black">
+    <h1 class="text-3xl font-bold underline text-white ">
+        Test App
+    </h1>
+
+    <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-5 m-auto">
+
+        <!-- row1 -->
+        <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <x-block-line-h></x-block-line-h>
+
+        <x-block-rect color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <x-block-line-h></x-block-line-h>
+
+        <x-block-rect color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <!-- row2 -->
+        <x-block-line-v></x-block-line-v>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-line-v></x-block-line-v>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-blank></x-block-blank>
+
+
+        <!-- row3 -->
+
+        <x-block-rect color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <x-block-line-h></x-block-line-h>
+
+        <x-block-rect color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+
+        <!-- row4 -->
+        <x-block-line-v></x-block-line-v>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-line-v></x-block-line-v>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-line-v></x-block-line-v>
+
+        <!-- row5 -->
+
+        <x-block-rect color="yellow" :name="$n3" desc1="xx" desc2="special" desc3="123"></x-block-rect>
+
+        <x-block-line-h></x-block-line-h>
+
+        <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+        <x-block-blank></x-block-blank>
+
+        <x-block-rect color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
 
     </div>
 </body>
