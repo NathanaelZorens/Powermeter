@@ -258,6 +258,50 @@ $line = "s";
             </div>
             <!-- ================Rectangle=========== -->
 
+
+                        <!-- ================XJointLine============== -->
+                        <div class="">
+                <svg class="" width="192" height="100">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="yellow" stroke-width="2"/>
+                    <line x1="96" y1="0" x2="96" y2="100" style="stroke:red;stroke-width:2" />
+                    <line x1="0" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
+
+                </svg>
+            </div>
+            <!-- ================XJointLine============== -->
+
+            <!-- ================TJointLine============== -->
+            
+            <div class="bg-white">
+                <!-- lr u/d -->
+                <svg class="" width="192" height="100" transform="rotate(180)">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2"/>
+                    <line x1="96" y1="50" x2="96" y2="100" style="stroke:red;stroke-width:2" />
+                    <line x1="0" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
+                </svg>
+
+                <!-- ud l/r -->
+                <svg class="" width="192" height="100" transform="rotate(180)">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2"/>
+                    <line x1="96" y1="0" x2="96" y2="100" style="stroke:red;stroke-width:2" />
+                    <line x1="96" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
+                </svg>
+                
+            </div>
+            <!-- ================TJointLine============== -->
+
+            <!-- ================LJointLine============== -->
+            <div class="bg-white">
+                <svg class="" width="192" height="100">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="purple" stroke-width="2"/>
+                    <line x1="96" y1="0" x2="96" y2="50" style="stroke:red;stroke-width:2" />
+                    <line x1="96" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
+
+                </svg>
+            </div>
+            <!-- ================LJointLine============== -->
+
+
         </div>
 
 
