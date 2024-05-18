@@ -41,7 +41,7 @@ $line = "s";
                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="red">
                 </svg>
 
-                
+
             </div>
             <!-- ========================================= -->
 
@@ -67,8 +67,8 @@ $line = "s";
 
             </div>
             <svg class="" height="100" width="192">
-                    <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
-                </svg>
+                <line x1="100" y1="0" x2="100" y2="100" style="stroke:blue;stroke-width:2" />
+            </svg>
         </div>
 
         <p> <?php echo $wid, " ", $hei; ?> </p>
@@ -176,13 +176,13 @@ $line = "s";
 
             <div>
                 <svg class="" width="192" height="100">
-                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
 
                 </svg>
             </div>
 
             <!-- ================BlankSpace============== -->
-            
+
             <!-- ================VerticLine============== -->
             <div>
                 <svg class="" width="192" height="100">
@@ -196,7 +196,7 @@ $line = "s";
 
             <div>
                 <svg class="" width="192" height="100">
-                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
 
                 </svg>
             </div>
@@ -208,7 +208,7 @@ $line = "s";
 
             <div>
                 <svg class="" width="192" height="100">
-                     <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
+                    <rect width="<?php echo $wid ?>" height="<?php echo $hei ?>" fill="none">
 
                 </svg>
             </div>
@@ -234,8 +234,8 @@ $line = "s";
             <!-- ================Rectangle=========== -->
 
 
-             <!-- ================HorizLine============== -->
-             <svg width="192" height="100">
+            <!-- ================HorizLine============== -->
+            <svg width="192" height="100">
                 <line x1="0" y1="50" x2="200" y2="50" style="stroke:blue;stroke-width:2" />
             </svg>
             <!-- ================HorizLine============== -->
@@ -259,10 +259,10 @@ $line = "s";
             <!-- ================Rectangle=========== -->
 
 
-                        <!-- ================XJointLine============== -->
-                        <div class="">
+            <!-- ================XJointLine============== -->
+            <div class="">
                 <svg class="" width="192" height="100">
-                    <circle cx="96" cy="50" r="10" fill="none" stroke="yellow" stroke-width="2"/>
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="yellow" stroke-width="2" />
                     <line x1="96" y1="0" x2="96" y2="100" style="stroke:red;stroke-width:2" />
                     <line x1="0" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
 
@@ -271,35 +271,68 @@ $line = "s";
             <!-- ================XJointLine============== -->
 
             <!-- ================TJointLine============== -->
-            
+
             <div class="bg-white">
                 <!-- lr u/d -->
                 <svg class="" width="192" height="100" transform="rotate(180)">
-                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2"/>
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2" />
                     <line x1="96" y1="50" x2="96" y2="100" style="stroke:red;stroke-width:2" />
                     <line x1="0" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
                 </svg>
 
                 <!-- ud l/r -->
                 <svg class="" width="192" height="100" transform="rotate(180)">
-                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2"/>
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="green" stroke-width="2" />
                     <line x1="96" y1="0" x2="96" y2="100" style="stroke:red;stroke-width:2" />
                     <line x1="96" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
                 </svg>
-                
+
             </div>
             <!-- ================TJointLine============== -->
 
             <!-- ================LJointLine============== -->
+            <!-- ur/dl -->
             <div class="bg-white">
-                <svg class="" width="192" height="100">
-                    <circle cx="96" cy="50" r="10" fill="none" stroke="purple" stroke-width="2"/>
+                <svg class="" width="192" height="100" transform="rotate(180)">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="purple" stroke-width="2" />
                     <line x1="96" y1="0" x2="96" y2="50" style="stroke:red;stroke-width:2" />
                     <line x1="96" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
 
                 </svg>
             </div>
+
+            <!-- ul/dr -->
+            <div class="bg-white">
+                <svg class="" width="192" height="100" transform="rotate(180)">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="purple" stroke-width="2" />
+                    <line x1="96" y1="0" x2="96" y2="50" style="stroke:red;stroke-width:2" />
+                    <line x1="0" y1="50" x2="96" y2="50" style="stroke:blue;stroke-width:2" />
+
+                </svg>
+            </div>
             <!-- ================LJointLine============== -->
+
+            <!-- ================IJointLine============== -->
+            <!--lr-->
+            <div class="">
+                <svg class="" width="192" height="100">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="yellow" stroke-width="2" />
+                    
+                    <line x1="0" y1="50" x2="192" y2="50" style="stroke:blue;stroke-width:2" />
+
+                </svg>
+            </div>
+
+            <!--ud-->
+            <div class="">
+                <svg class="" width="192" height="100">
+                    <circle cx="96" cy="50" r="10" fill="none" stroke="yellow" stroke-width="2" />
+                    <line x1="96" y1="0" x2="96" y2="100" style="stroke:red;stroke-width:2" />
+                    
+
+                </svg>
+            </div>
+            <!-- ================IJointLine============== -->
 
 
         </div>

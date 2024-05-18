@@ -22,12 +22,12 @@ $d3="C";
 
 ?>
 
-<body class="flex flex-col gap-y-4 bg-black">
+<body class="flex flex-col gap-y-4 bg-black p-4 ">
     <h1 class="text-3xl font-bold underline text-white ">
         Test App
     </h1>
 
-    <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-5 m-auto">
+    <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
 
         <!-- row1 -->
         <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>

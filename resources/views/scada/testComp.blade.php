@@ -31,10 +31,10 @@ $d3 = "C";
         Test Comp
     </h1>
 
-    <div class="bg-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-1 m-4">
+    <div class="bg-gray-800 grid grid-cols-5 w-fit md:w-fit h-auto gap-1 p-1 m-4">
 
         <!-- row1 -->
-        <x-block-rect colorText="white" color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3" ></x-block-rect>
+        <x-block-rect colorText="white" color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
@@ -67,6 +67,19 @@ $d3 = "C";
         <x-block-line-h></x-block-line-h>
 
         <x-block-rect colorText="white" color="blue" :name="$n2" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+
+
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+        <x-block-line-v></x-block-line-v>
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+
+
+        <x-block-blank></x-block-blank>
+        <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+        <x-block-joint-x></x-block-joint-x>
+        <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
 
 
