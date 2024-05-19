@@ -18,8 +18,8 @@ $n = "$name"
     function showSide(name) {
         document.getElementById("sideBar").style.display = "block";
 
-        var newName=name;
-        document.getElementById('rectName').innerHTML = newName;
+        var newName = name;
+        document.getElementById('rectName').innerHTML = "Nama: " + newName;
 
     }
 
@@ -32,30 +32,33 @@ $n = "$name"
 
         alert(name)
     }
-
-
 </script>
 
 
 <div>
     <!-- ========= SideBar ============ -->
-    <div class="" id="sideBar" style="display:none; z-index:0">
-        <div class=" fixed top-0 right-0 w-64 h-screen text-white bg-green-800 flex flex-col">
-            <h2>Ueey</h2>
-            <button class="w-32 bg-red-800" onclick="hideSide()">Hide</button>
+    <div class="z-50 " id="sideBar" style="display:none;">
+        <div class=" fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-600 flex flex-col border-solid border-4 border-white">
+            <div class="mx-auto w-64">
+                <div class="m-3 p-2">
+                <h1 class="text-xl font-bold">Detail</h1>
 
-            <h1 id="rectName">name</h1>
+                <h1 id="rectName">name</h1>
+                </div>
+
+            </div>
+            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Hide</button>
 
         </div>
     </div>
     <!-- ========= SideBar ============ -->
 
-    <div class="rounded-lg w-32 overflow-clip md:w-52 z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>">
+    <div class="rounded-lg w-32 overflow-clip md:w-52 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
-        <div>
+        <div class="">
 
-            <button onclick="showSide('<?php echo $name ?>')" style="z-index: 1;">
+            <button class="" onclick="showSide('<?php echo $name ?>')" style="">
                 <div class="m-2">
                     <div class="flex truncate">
                         <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>

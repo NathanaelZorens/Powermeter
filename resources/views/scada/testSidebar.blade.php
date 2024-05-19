@@ -19,6 +19,14 @@
     }
 </script>
 
+<?php 
+
+$n3="test";
+
+
+
+?>
+
 <body class="flex flex-col gap-y-4">
 
 
@@ -40,6 +48,10 @@
             </div>
         </div>
         <!-- ========= SideBar ============ -->
+
+        
+
+        <x-rect-test color="orange" :name="$n3"></x-rect-test>
 
 
     </div>
