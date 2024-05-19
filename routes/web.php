@@ -27,3 +27,7 @@ Route::get('/col', function () {
 Route::get('/comp', function () {
     return view('scada.testComp');
 })->name('comp');
+
+Route::get('/side', function () {
+    return view('scada.testSidebar');
+})->name('side');

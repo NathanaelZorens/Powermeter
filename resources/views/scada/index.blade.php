@@ -78,11 +78,11 @@ $d3="C";
 
         <!-- row5 -->
 
-        <x-block-rect color="yellow" :name="$n3" desc1="xx" desc2="special" desc3="123"></x-block-rect>
+        <x-block-rect color="purple" :name="$n3" desc1="xx" desc2="special" desc3="123"></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
-        <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+        <x-block-rect color="orange" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
 
         <x-block-blank></x-block-blank>
 
