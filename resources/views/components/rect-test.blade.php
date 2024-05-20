@@ -11,7 +11,7 @@ $col = "$color";
 $n = "$name";
 
 
-  
+
 
 ?>
 
@@ -21,11 +21,11 @@ $n = "$name";
     function showSideT(name, color) {
         document.getElementById("sideBarT").style.display = "block";
 
-        var newName=name;
+        var newName = name;
         document.getElementById('rectName').innerHTML = newName;
 
-        var newColor=color;
-        document.getElementById("rectName").style.color = newColor ;
+        var newColor = color;
+        document.getElementById("rectName").style.color = newColor;
 
 
     }
@@ -39,8 +39,6 @@ $n = "$name";
 
         alert(name);
     }
-
-
 </script>
 
 
@@ -58,11 +56,12 @@ $n = "$name";
     <!-- ========= SideBar ============ -->
 
     <div class="rounded-lg w-32 overflow-clip md:w-52 z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>">
-    <!-- showSideT('<?php echo $name ?>') -->
+        <!-- showSideT('<?php echo $name ?>') -->
 
+        
         <div>
 
-            <button onclick="showSideT('<?php echo $n ?>','<?php echo $col ?>')" style="z-index: 1;">
+            <button class="w-52" onclick="showSideT('<?php echo $n ?>','<?php echo $col ?>')" style="z-index: 1;">
                 <div class="m-2">
                     <div class="flex truncate">
                         <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>
@@ -89,6 +88,14 @@ $n = "$name";
         <!-- <svg height="120" width="200" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
         <rect width="200" height="120" rx="6" fill="rgb(229 231 235)">
     </svg> -->
+
+
+    </div>
+    <div class="w-32 md:w-52 h-fit mx-auto md:mx-auto justify-center hover:bg-gray-400">
+        <svg class="m-auto" width="200" height="100" viewBox="0 0 200 100">
+            <line x1="100" y1="0" x2="100" y2="100" style="stroke:#44ff00;stroke-width:2" />
+        </svg>
+
 
 
     </div>

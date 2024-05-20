@@ -31,3 +31,7 @@ Route::get('/comp', function () {
 Route::get('/side', function () {
     return view('scada.testSidebar');
 })->name('side');
+
+Route::get('/dia', function () {
+    return view('scada.diagramtest');
+})->name('dia');

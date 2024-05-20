@@ -15,11 +15,13 @@ $n = "$name"
 <script>
     //var a, b, c;
 
-    function showSide(name) {
+    function showSide(name,color) {
         document.getElementById("sideBar").style.display = "block";
 
         var newName = name;
         document.getElementById('rectName').innerHTML = "Nama: " + newName;
+        document.getElementById('sideBarI').style.borderColor= color;
+
 
     }
 
@@ -38,12 +40,27 @@ $n = "$name"
 <div>
     <!-- ========= SideBar ============ -->
     <div class="z-50 " id="sideBar" style="display:none;">
-        <div class=" fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-600 flex flex-col border-solid border-4 border-white">
-            <div class="mx-auto w-64">
-                <div class="m-3 p-2">
-                <h1 class="text-xl font-bold">Detail</h1>
+        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+            
+            <h1 class="mt-5 mx-auto h-fit text-xl md:text-3xl font-bold">Detail</h1>
 
-                <h1 id="rectName">name</h1>
+            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+
+                <div class="m-3 p-2">
+
+
+                    <h1 class="text-xl font-bold" id="rectName">name</h1>
+                    <ul>
+                        <li>
+                            Data 1:
+                        </li>
+                        <li>
+                            Data 2:
+                        </li>
+                        <li>
+                            Data 3:
+                        </li>
+                    </ul>
                 </div>
 
             </div>
@@ -58,7 +75,7 @@ $n = "$name"
 
         <div class="">
 
-            <button class="" onclick="showSide('<?php echo $name ?>')" style="">
+            <button class="" onclick="showSide('<?php echo $name ?>','<?php echo $col ?>')" style="">
                 <div class="m-2">
                     <div class="flex truncate">
                         <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>

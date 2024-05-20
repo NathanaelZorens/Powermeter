@@ -1,4 +1,4 @@
-var line = document.getElementById('lineChart').getContext('2d');
+var line = document.getElementById('lineChart');
 var lineChart = new Chart(line, {
     type: 'line',
     data: {

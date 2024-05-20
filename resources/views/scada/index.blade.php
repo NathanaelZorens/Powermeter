@@ -15,9 +15,9 @@ $n1 = "Unit No 1";
 $n2 = "Unit No 2";
 $n3 = "Unit No 3";
 
-$d1="A";
-$d2="B";
-$d3="C";
+$d1 = "A";
+$d2 = "B";
+$d3 = "C";
 
 
 ?>
@@ -28,6 +28,22 @@ $d3="C";
     </h1>
 
     <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
+
+
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+        <x-block-rect color="orange" name="Utama" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+        <x-block-line-v></x-block-line-v>
+        <x-block-blank></x-block-blank>
+        <x-block-blank></x-block-blank>
+
+
+
 
         <!-- row1 -->
         <x-block-rect color="red" :name="$n1" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
@@ -49,7 +65,8 @@ $d3="C";
 
         <x-block-blank></x-block-blank>
 
-        <x-block-blank></x-block-blank>
+        <x-block-line-v></x-block-line-v>
+
 
 
         <!-- row3 -->
@@ -78,7 +95,7 @@ $d3="C";
 
         <!-- row5 -->
 
-        <x-block-rect color="purple" :name="$n3" desc1="xx" desc2="special" desc3="123"></x-block-rect>
+        <x-block-rect color="purple" name="Unit X" desc1="xx" desc2="special" desc3="123"></x-block-rect>
 
         <x-block-line-h></x-block-line-h>
 
