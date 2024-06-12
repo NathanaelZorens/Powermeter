@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HistoryController;
+use App\Models\Acol;
+use App\Models\Anode;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,5 +35,6 @@ Route::get('/side', function () {
 })->name('side');
 
 Route::get('/dia', function () {
-    return view('scada.diagramtest');
+    return view('scada.diagramtest', ['anodes' => Anode::all(), 'acols' => Acol::all()]);
 })->name('dia');
+

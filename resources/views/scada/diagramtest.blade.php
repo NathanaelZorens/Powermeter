@@ -25,8 +25,9 @@ $d3 = "C";
     function addBlock() {
         // var code = '<p class="h-4 w-fit p-4 bg-blue-300">TEST<p/>';
         // document.getElementById("myId").innerHTML = code;
+        tarnum = document.getElementById("target").value;
 
-        document.getElementById("slot5").innerHTML = `<x-block-line-v></x-block-line-v>`;
+        document.getElementById(`slot${tarnum}`).innerHTML = `<x-block-line-v></x-block-line-v>`;
 
     }
 
@@ -48,12 +49,12 @@ $d3 = "C";
         num = document.getElementById("jumlah").value
         //document.getElementById("demo").innerHTML = num;
         const list = document.getElementById("demo").classList;
-        
+
         list.remove(list.item(5));
         list.add(`grid-cols-${num}`);
         //alert(list.item(5)) 
 
-        
+
 
     }
 </script>
@@ -66,8 +67,13 @@ $d3 = "C";
     </h1>
 
     <div class="border-2 border-solid border-white p-2 ">
-        <label class="text-white" for="jumlah">banyak grid:</label>
 
+
+
+
+        <!-- test Event Listener -->
+
+        <label class="text-white" for="jumlah">banyak grid:</label>
         <select class="w-fit" name="jumlah" id="jumlah">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -78,22 +84,11 @@ $d3 = "C";
         </select>
         <button class="w-fit bg-white text-black p-2" onclick="myFunction()">enter</button>
 
-        <div id=" " class="w-fit text-black bg-gray-800 p-3 grid grid-cols-4">
-            <!-- test Event Listener -->
-            <div class="p-2 m-2 bg-red-500">XX</div>
-            <div class="p-2 m-2 bg-blue-400">XX</div>
-            <div class="p-2 m-2 bg-pink-400">XX</div>
-            <div class="p-2 m-2 bg-gray-400">XX</div>
-            <div class="p-2 m-2 bg-orange-400">XX</div>
+        <label class="text-white" for="target">target:</label>
+        <input type="text" id="target">
+        <button class="w-fit bg-white text-black p-2" onclick="addBlock()">enter</button>
 
-            <div class="p-2 m-2 bg-purple-400">XX</div>
-            <div class="p-2 m-2 bg-yellow-300">XX</div>
-            <div class="p-2 m-2 bg-rose-600">XX</div>
-
-
-        </div>
-
-        <div id="demo" class="w-fit text-black bg-gray-800 p-3 grid grid-cols-4">
+        <div id="demo" class="w-fit text-black bg-gray-800 p-3 grid grid-cols-5">
             <!-- test Event Listener -->
             <div id="slot1" class="p-2 m-2 bg-red-600">01</div>
             <div id="slot2" class="p-2 m-2 bg-gray-600">02</div>
@@ -134,6 +129,76 @@ $d3 = "C";
             test Class List
         </div>
     </div>
+
+
+    <div class="border-2 border-solid border-white p-2">
+        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
+
+        <div id="test2" class="w-fit text-white bg-orange-500">
+            test JSON
+        </div>
+
+        <div>
+            <script>
+                fetch('./scada/employees.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    });
+            </script>
+
+            <div class="emp"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="border-2 border-solid border-white p-2">
+        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
+
+        <div id="test2" class="w-fit text-white bg-orange-500">
+            test Eloquent
+        </div>
+
+        <div class="rounded-md border-2 border-solid border-gray-200 flex w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
+
+
+
+
+
+
+
+
+            @foreach ($anodes as $anode)
+
+            <!-- <div class="bg-white">
+                <p class="text-black">{{$anode['name']}}</p>
+             </div> -->
+
+            <div class="">
+
+                <x-block-line-v></x-block-line-v>
+
+                <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+
+
+            </div>
+
+
+
+
+
+            @endforeach
+
+        </div>
+
+
+    </div>
+
+
 
     <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-9 w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
 
