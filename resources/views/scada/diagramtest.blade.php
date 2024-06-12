@@ -170,30 +170,28 @@ $d3 = "C";
 
 
 
-
-
-            @foreach ($anodes as $anode)
-
-            <!-- <div class="bg-white">
+        @foreach ($acols as $acol) 
+            
+            <div class="block">
+                @foreach ($anodes as $anode)
+                    @if( $anode->acol_id == $acol->id)
+                <!-- <div class="bg-white">
                 <p class="text-black">{{$anode['name']}}</p>
              </div> -->
 
-            <div class="">
+                <div class="">
 
-                <x-block-line-v></x-block-line-v>
+                    <x-block-line-v></x-block-line-v>
 
-                <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                    <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
 
 
+                </div>
+                    @endif
+                @endforeach
             </div>
-
-
-
-
-
-            @endforeach
-
-        </div>
+        @endforeach
+    </div>
 
 
     </div>

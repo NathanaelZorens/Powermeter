@@ -52,7 +52,7 @@ $n = "$name"
                     <h1 class="text-xl font-bold" id="rectName">name</h1>
                     <ul>
                         <li>
-                            Data 1:
+                            Data 1: {{$desc1}}
                         </li>
                         <li>
                             Data 2:

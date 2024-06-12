@@ -35,6 +35,17 @@ Route::get('/side', function () {
 })->name('side');
 
 Route::get('/dia', function () {
-    return view('scada.diagramtest', ['anodes' => Anode::all(), 'acols' => Acol::all()]);
+
+    $acols = Acol::all();
+
+    
+    //$anodes = Anode::where ('acol_id', '=', '1')->get();
+    
+    $anodes = Anode::all();
+
+    //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
+    
+    return view('scada.diagramtest', ['acols' => $acols, 'anodes' => $anodes  ]);
+
 })->name('dia');
 
