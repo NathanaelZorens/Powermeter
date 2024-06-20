@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AcolController;
+use App\Http\Controllers\AnodeController;
+
 use App\Http\Controllers\HistoryController;
 use App\Models\Acol;
 use App\Models\Anode;
@@ -49,3 +52,26 @@ Route::get('/dia', function () {
 
 })->name('dia');
 
+
+
+
+Route::get('/dash', function () {
+
+    $acols = Acol::all();
+
+    
+    //$anodes = Anode::where ('acol_id', '=', '1')->get();
+    
+    $anodes = Anode::all();
+
+    //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
+    
+    return view('scada.dash', ['acols' => $acols, 'anodes' => $anodes  ]);
+
+})->name('dash');
+
+//Route::get('/columns', [AcolController::class, 'index']);
+//Route::get('/columns/create', [AcolController::class, 'create'])->name('columns.create');
+Route::resource('/columns', AcolController::class);
+
+Route::resource('/nodes', AnodeController::class);

@@ -10,6 +10,8 @@ class Acol extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function anodes(): HasMany
     {
         return $this->hasMany(Anode::class);

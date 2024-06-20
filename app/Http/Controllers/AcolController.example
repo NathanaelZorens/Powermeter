@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Acol;
+
+class AcolController extends Controller
+{
+    //
+    public function index(){
+
+        $acols = Acol::all();
+
+        return view('scada.columns.index', ['acols' => $acols]);
+    }
+    
+    public function create(){
+
+        $acols = Acol::all();
+
+        return view('scada.columns.create', ['acols' => $acols]);
+    }
+}

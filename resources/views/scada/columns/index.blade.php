@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+</head>
+
+<body class="flex flex-col gap-y-4">
+    <h1 class="text-3xl font-bold underline bg-red-500 ">
+        Column List 
+    </h1>
+
+    <a class="w-fit p-1 m-4 bg-blue-300" href="/columns/create">Add</a>
+
+
+    <div>
+
+        <table class="gap-2 border-4 border-black border-solid border-spacing-2">
+            <tr class="border-4 border-black border-solid">
+                <th>No.</th>
+                <th >Nama</th>
+                <th class="w-32">Aksi</th>
+            </tr>
+
+            @foreach ($acols as $acol)
+            <tr>
+                <td class="w-2 m-auto justify-center">{{$acol['id']}}</td>
+                <td class="w-32 m-auto justify-center">{{$acol['name']}}</td>
+                <td class="w-32 m-auto justify-center">Xxx</td>
+            </tr>
+            @endforeach
+
+
+        </table>
+
+</div>
+
+        
+
+<p class="text-yellow-200 bg-black">test</p>
+
+
+</body>
+
+</html>
