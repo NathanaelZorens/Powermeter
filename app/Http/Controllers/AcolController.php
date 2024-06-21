@@ -41,7 +41,15 @@ class AcolController extends Controller
 
         Acol::create($validatedData);
 
-        return redirect('/columns');
+        
+
+        // return redirect('/columns');
+        // return response()->json([
+        //     "key"=> $request->all()
+        // ]);
+        
+        //return response($request);
+
     }
 
     /**

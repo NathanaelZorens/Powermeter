@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="flex flex-col gap-y-4">
+<body class="flex flex-col gap-y-4 bg-black text-white">
     <h1 class="text-3xl font-bold underline bg-red-500 ">
         Add Column
     </h1>
@@ -19,19 +19,25 @@
 
         <form method="post" action="/columns">
             @csrf
-            <label for="name">Nama:</label><br>
-            <input class="border-black border-solid border" type="text" id="name" name="name"><br>
-            
-            <button class="bg-gray-200 hover:bg-gray-400" type="submit" >Submit</button>
+            <div class="m-2">
+                <label for="name">Nama:</label><br>
+                <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
+            </div>
+
+            <div class="w-fit mx-auto bg-green-400">
+                <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24" type="submit">Submit</button>
+            </div>
         </form>
 
     </div>
 
 
 
-    <p class="text-yellow-200 bg-black">test</p>
+
 
 
 </body>
+
+
 
 </html>

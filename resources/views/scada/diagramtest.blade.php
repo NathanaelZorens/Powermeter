@@ -139,13 +139,13 @@ $d3 = "C";
         </div>
 
         <div>
-            <script>
+            <!-- <script>
                 fetch('./scada/employees.json')
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
                     });
-            </script>
+            </script> -->
 
             <div class="emp"></div>
 
@@ -163,23 +163,31 @@ $d3 = "C";
             test Eloquent
         </div>
 
-        <div class="rounded-md border-2 border-solid border-gray-200 flex w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
+
+        <div class=" mx-2 ">
 
 
 
+            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+            <x-block-line-v></x-block-line-v>
+
+        </div>
+        
+        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
 
 
 
-        @foreach ($acols as $acol) 
-            
+            @foreach ($acols as $acol)
+
             <div class="block">
                 @foreach ($anodes as $anode)
-                    @if( $anode->acol_id == $acol->id)
+                @if( $anode->acol_id == $acol->id)
                 <!-- <div class="bg-white">
                 <p class="text-black">{{$anode['name']}}</p>
              </div> -->
 
-                <div class="">
+                <div class="mx-2">
+
 
                     <x-block-line-v></x-block-line-v>
 
@@ -187,11 +195,11 @@ $d3 = "C";
 
 
                 </div>
-                    @endif
+                @endif
                 @endforeach
             </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
 
 
     </div>

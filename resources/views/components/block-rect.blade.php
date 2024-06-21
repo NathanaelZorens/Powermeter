@@ -70,7 +70,7 @@ $n = "$name"
     </div>
     <!-- ========= SideBar ============ -->
 
-    <div class="rounded-lg w-32 overflow-clip md:w-52 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
+    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-52 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
         <div class="">
