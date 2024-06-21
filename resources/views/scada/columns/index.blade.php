@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 
 </head>
 
@@ -18,9 +18,9 @@
     function showSide(name, color) {
         document.getElementById("sideBar").style.display = "block";
 
-        var newName = name;
-        document.getElementById('rectName').innerHTML = "Nama: " + newName;
-        document.getElementById('sideBarI').style.borderColor = color;
+        //var newName = name;
+        //document.getElementById('rectName').innerHTML = "Nama: " + newName;
+        //document.getElementById('sideBarI').style.borderColor = color;
 
 
     }
@@ -53,7 +53,7 @@
 
                 <div class="m-auto w-fit">
 
-                    <div method="post" action="">
+                    <form method="post" action="/columns">
                         @csrf
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
@@ -63,7 +63,7 @@
                         <div class="w-fit mx-auto bg-green-400">
                             <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24" type="submit" id="submitCol">Submit</button>
                         </div>
-                    </div>
+                    </form>
 
                 </div>
 
@@ -107,7 +107,7 @@
 
 
 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             let subCol = document.getElementById("submitCol");
 
@@ -137,7 +137,7 @@
 
 
         });
-    </script>
+    </script> -->
 
 </body>
 

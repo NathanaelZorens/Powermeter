@@ -43,7 +43,7 @@ class AcolController extends Controller
 
         
 
-        // return redirect('/columns');
+        return redirect('/columns');
         // return response()->json([
         //     "key"=> $request->all()
         // ]);
