@@ -46,100 +46,57 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node1',
             'color' => 'red',
             'acol_id'=> '1',
-            'arow_id'=> '1',
-            'parent_id'=>null
+            'arow_id'=> '1'
         ]);
 
         Anode::create([
             'name' => 'Node2',
             'color' => 'blue',
-            'acol_id'=> '2',
-            'arow_id'=> '1',
-            'parent_id'=>null
+            'acol_id'=> '1',
+            'arow_id'=> '1'
+
         ]);
 
         Anode::create([
             'name' => 'Node3',
             'color' => 'yellow',
-            'acol_id'=> '3',
-            'arow_id'=> '1',
-            'parent_id'=>null
+            'acol_id'=> '1',
+            'arow_id'=> '1'
 
         ]);
 
         Anode::create([
             'name' => 'Node4',
             'color' => 'green',
-            'acol_id'=> '1',
-            'arow_id'=> '2',
-            'parent_id'=>'1'
-
+            'acol_id'=> '2',
+            'arow_id'=> '1'
 
         ]);
 
         Anode::create([
             'name' => 'Node5',
             'color' => 'magenta',
-            'acol_id'=> '1',
-            'arow_id'=> '2',
-            'parent_id'=>'1'
-
+            'acol_id'=> '2',
+            'arow_id'=> '1'
 
         ]);
 
         Anode::create([
             'name' => 'Node6',
             'color' => 'orange',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'4'
+            'acol_id'=> '2',
+            'arow_id'=> '1'
 
         ]);
 
         Anode::create([
             'name' => 'Node7',
             'color' => 'purple',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'4'
+            'acol_id'=> '3',
+            'arow_id'=> '1'
 
         ]);
 
-        Anode::create([
-            'name' => 'Node8',
-            'color' => 'white',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'4'
-
-        ]);
-
-        Anode::create([
-            'name' => 'Node9',
-            'color' => 'gray',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'5'
-
-        ]);
-
-        Anode::create([
-            'name' => 'Node10',
-            'color' => 'gray',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'5'
-
-        ]);
-
-        Anode::create([
-            'name' => 'Node11',
-            'color' => 'gray',
-            'acol_id'=> '1',
-            'arow_id'=> '3',
-            'parent_id'=>'5'
-
-        ]);
 
     }
 }

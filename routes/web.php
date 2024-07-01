@@ -6,6 +6,7 @@ use App\Http\Controllers\AnodeController;
 use App\Http\Controllers\HistoryController;
 use App\Models\Acol;
 use App\Models\Anode;
+use App\Models\Arow;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -51,6 +52,24 @@ Route::get('/dia', function () {
     return view('scada.diagramtest', ['acols' => $acols, 'anodes' => $anodes  ]);
 
 })->name('dia');
+
+
+Route::get('/new', function () {
+
+    $acols = Acol::all();
+    $arows = Arow::all();
+    
+    //$anodes = Anode::where ('acol_id', '=', '1')->get();
+    
+    $anodes = Anode::all();
+    $anodesx = Anode::all();
+
+
+    //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
+    
+    return view('scada.testBranch', ['acols' => $acols, 'arows' => $arows, 'anodes' => $anodes, 'anodesx' => $anodesx  ]);
+
+})->name('new');
 
 
 

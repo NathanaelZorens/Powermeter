@@ -19,8 +19,13 @@ return new class extends Migration
             $table->foreign('acol_id')->references('id')->on('acols');
             $table->unsignedBigInteger('arow_id');
             $table->foreign('arow_id')->references('id')->on('arows');
+            $table->string('parent_id')->nullable();
             $table->timestamps();
         });
+
+    //     Schema::table('anodes',function (Blueprint $table){
+    //         $table->foreign('parent_id')->references('id')->on('anodes');
+    // });
     }
 
     /**

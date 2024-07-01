@@ -176,6 +176,7 @@ $d3 = "C";
         <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
 
 
+            
 
             @foreach ($acols as $acol)
 
@@ -199,6 +200,7 @@ $d3 = "C";
                 @endforeach
             </div>
             @endforeach
+            
         </div>
 
 
