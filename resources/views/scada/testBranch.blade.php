@@ -68,8 +68,131 @@ $d3 = "C";
 
 
 
+    <div class="border-2 border-solid border-white p-2">
+        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
+
+        <div id="test2" class="w-fit text-white bg-orange-500">
+            test branch
+        </div>
 
 
+        <div class=" mx-2 ">
+
+
+
+            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+            <x-block-line-v></x-block-line-v>
+
+        </div>
+
+        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+
+            
+          
+
+           @foreach($acols as $acol)
+           <div class="border border-dotted border-green-400 p-3 m-2">
+                <h1 class="text-white">Col</h1>
+
+
+                @foreach($anodes as $anode)
+                    @if($anode->arow_id == $arows->last()->id)
+                        @continue
+                    @endif
+
+                    @if($anode->acol_id == $acol->id)
+
+                    
+
+                    <script>
+                        console.log("===="+"{{$anode['name']}}"+"====");
+                    </script>
+
+                        @foreach($anodes as $anodex)
+                                                  
+                            @if($anodex->parent_id == $anode->id)
+                            <script>
+                                console.log("{{$anodex['name']}}");
+                           </script>
+                            @endif
+                            
+                        
+                        @endforeach
+                    
+
+                    @endif
+                @endforeach
+           </div>
+           @endforeach
+
+
+            
+        </div>
+
+
+    </div>
+
+
+
+    <div class="border-2 border-solid border-white p-2">
+        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
+
+        <div id="test2" class="w-fit text-white bg-orange-500">
+            test branch
+        </div>
+
+
+        <div class=" mx-2 ">
+
+
+
+            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+            <x-block-line-v></x-block-line-v>
+
+        </div>
+
+        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+
+           @foreach($acols as $acol)
+           <div class="border border-dotted border-green-400 p-3 m-2">
+                <h1 class="text-white">Col</h1>
+
+
+                @foreach($anodes as $anode)
+                    @if($anode->arow_id == $arows->last()->id)
+                        @continue
+                    @endif
+                    
+                    @if($anode->acol_id == $acol->id)
+                        
+                        <div class="text-whte bg-red-400 p-3 m-2">{{$anode['name']}}</div>
+                        <div class="border border-yellow-500 border-solid m-2 ">
+
+                        @foreach($anodes as $anodech)
+                            
+                            @if($anodech->parent_id == $anode->id)
+
+                            <div class="text-whte bg-blue-400 p-3 m-2">{{$anodech['name']}} child of {{$anode['name']}}</div>
+                                
+                            @else
+
+                            @endif
+                            
+                        @endforeach
+                        
+                        </div>
+
+                        
+
+                    @endif
+                @endforeach
+           </div>
+           @endforeach
+            
+        </div>
+
+
+    </div>
 
 
 
