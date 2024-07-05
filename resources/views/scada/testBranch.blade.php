@@ -68,7 +68,7 @@ $d3 = "C";
 
 
 
-    <div class="border-2 border-solid border-white p-2">
+    <div class="border-2 border-solid border-white p-2 w-fit">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
         <div id="test2" class="w-fit text-white bg-orange-500">
@@ -87,52 +87,61 @@ $d3 = "C";
 
         <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
 
-            
-          
-
            @foreach($acols as $acol)
            <div class="border border-dotted border-green-400 p-3 m-2">
-                <h1 class="text-white">Col</h1>
+                
 
-
-                @foreach($anodes as $anode)
-                    @if($anode->arow_id == $arows->last()->id)
-                        @continue
-                    @endif
-
-                    @if($anode->acol_id == $acol->id)
-
+                @foreach($arows as $arow)
+                
+                <div class="border border-yellow-400 border-dotted m-1 flex">
+                @foreach($anodes->where('acol_id',$acol->id)->where('arow_id',$arow->id) as $anode)
                     
-
-                    <script>
-                        console.log("===="+"{{$anode['name']}}"+"====");
-                    </script>
-
-                        @foreach($anodes as $anodex)
-                                                  
-                            @if($anodex->parent_id == $anode->id)
-                            <script>
-                                console.log("{{$anodex['name']}}");
-                           </script>
-                            @endif
-                            
+                    @if($anode->where('parent_id',$anode->id)->exists())                    
                         
-                        @endforeach
+                        <div class="border-white border border-dashed m-2 flex">
+                        @foreach($anodes->where('parent_id',$anode->id) as $anodech)
+                            @if($anodech->parent_id == $anodech->id)
+                                @continue
+                            @else
+                            
+                            <!-- <div class="text-whte bg-blue-400 p-3 m-2">{{$anodech['name']}} child of {{$anode['name']}}</div> -->
+                            <div class="mx-2">
+
+
+                                        <x-block-line-v></x-block-line-v>
+
+                                        <x-block-rect color="{{$anodech['color']}}" name="{{$anodech['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+
                     
 
+                                        <script>
+                                            console.log("{{$anodech['name']}}" + ' is printed'); //<== cara reference php variable ke script
+                                        </script>  
+
+                            </div>
+
+                            @endif
+                        @endforeach
+                        </div>
+                        
+                    @else    
+                            @continue
+                        
                     @endif
                 @endforeach
+                </div>
+
+                @endforeach
+
            </div>
            @endforeach
-
-
             
         </div>
 
 
     </div>
 
-
+<!-- ============================================================================================================================================= -->
 
     <div class="border-2 border-solid border-white p-2">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
@@ -159,31 +168,39 @@ $d3 = "C";
 
 
                 @foreach($anodes as $anode)
-                    @if($anode->arow_id == $arows->last()->id)
-                        @continue
-                    @endif
+                    
                     
                     @if($anode->acol_id == $acol->id)
+                    
+                    <!-- ngecek dia parent atau bukan -->
+                    @if($anode->where('parent_id',$anode->id)->exists()) 
+
                         
                         <div class="text-whte bg-red-400 p-3 m-2">{{$anode['name']}}</div>
                         <div class="border border-yellow-500 border-solid m-2 ">
-
-                        @foreach($anodes as $anodech)
                             
-                            @if($anodech->parent_id == $anode->id)
+                            @foreach($anodes as $anodech)
 
-                            <div class="text-whte bg-blue-400 p-3 m-2">{{$anodech['name']}} child of {{$anode['name']}}</div>
+                                    @if ($anodech->id == $anodech->parent_id)
+                                        @continue
+                            
+                                    @elseif($anodech->parent_id == $anode->id)
+
+
+                                    <div class="text-whte bg-blue-400 p-3 m-2">{{$anodech['name']}} child of {{$anode['name']}}</div>
+                                    
+
+
+                                    @endif
+                                    
+
                                 
-                            @else
-
-                            @endif
+                            @endforeach
                             
-                        @endforeach
+                            </div>
+                            
                         
-                        </div>
-
-                        
-
+                    @endif 
                     @endif
                 @endforeach
            </div>

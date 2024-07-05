@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
             'color' => 'red',
             'acol_id'=> '1',
             'arow_id'=> '1',
-            'parent_id'=>null
+            'parent_id'=>'0'
         ]);
 
         Anode::create([
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'color' => 'blue',
             'acol_id'=> '2',
             'arow_id'=> '1',
-            'parent_id'=>null
+            'parent_id'=>'0'
         ]);
 
         Anode::create([
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
             'color' => 'yellow',
             'acol_id'=> '3',
             'arow_id'=> '1',
-            'parent_id'=>null
+            'parent_id'=>'3'
 
         ]);
 
