@@ -72,6 +72,24 @@ Route::get('/new', function () {
 })->name('new');
 
 
+Route::get('/ele', function () {
+
+    $acols = Acol::all();
+    $arows = Arow::all();
+    
+    //$anodes = Anode::where ('acol_id', '=', '1')->get();
+    
+    $anodes = Anode::all();
+    $anodesx = Anode::all();
+
+
+    //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
+    
+    return view('scada.testElement', ['acols' => $acols, 'arows' => $arows, 'anodes' => $anodes, 'anodesx' => $anodesx  ]);
+
+})->name('ele');
+
+
 
 
 Route::get('/dash', function () {

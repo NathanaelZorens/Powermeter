@@ -81,6 +81,100 @@ $d3 = "C";
     </h1>
 
 
+
+    
+
+
+
+
+
+
+
+  <div class="border-2 border-solid border-white p-2 w-fit">
+        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
+
+        <div id="test2" class="w-fit text-white bg-orange-500">
+            test branch
+        </div>
+
+
+        <div class=" mx-2 ">
+
+
+
+            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+            <x-block-line-v></x-block-line-v>
+
+        </div>
+
+        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+
+           @foreach($acols as $acol)
+           <div class="border border-dotted border-green-400 p-3 m-2">
+                <h1 class="text-white">Col</h1>
+
+
+                @foreach($anodes as $anode)
+                    
+                    @if($anode->acol_id == $acol->id)
+                                    @if ($anode->id == $anode->parent_id)
+                                    <div class="text-whte bg-red-400 p-3 m-2" >
+                                        <h1>{{$anode['name']}}</h1>
+                                    </div>
+                                    <div class="border border-yellow-500 border-solid m-2 flex" id="node{{$anode['id']}}">
+                                    </div>
+                                    @else
+
+                                    <script>
+                                        tarnum = "node{{$anode['parent_id']}}"
+                                        
+                                        divCont = `<div>
+                                                    <div class="text-whte bg-orange-400 p-3 m-2">
+                                                    {{$anode['name']}}
+                                                    </div>
+                                                    <div class="text-whte p-3 m-2 flex" id="node{{$anode['id']}}"> 
+                                                    </div>
+                                                   </div>`;
+
+                                        newDiv = document.createElement('div');
+
+                                        newDiv.innerHTML = divCont;
+
+                                        parentDiv=document.getElementById(`${tarnum}`);
+                                        
+                                        parentDiv.appendChild(newDiv);
+                                    </script>
+                                    
+                                    @endif
+                                    
+
+                                
+                            
+                            
+                            
+                        
+                    
+                    @endif
+                @endforeach
+           </div>
+           @endforeach
+            
+        </div>
+
+
+    </div>
+
+
+
+
+
+<!-- ====================================================================================== -->
+
+
+
+
+
+
     <div class="border-2 border-solid border-white p-2 w-fit">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
@@ -466,99 +560,7 @@ $d3 = "C";
 
 
 
-    <div class="border-2 border-solid border-white p-2">
-        <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
-        <div id="test2" class="w-fit text-white bg-orange-500">
-            test Eloquent
-        </div>
-
-
-        <div class=" mx-2 ">
-
-
-
-            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
-            <x-block-line-v></x-block-line-v>
-
-        </div>
-
-        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
-
-            @foreach ($arows as $arow)
-
-            <script>
-                console.log("Row detected");
-            </script>
-            @endforeach
-
-
-            @foreach ($acols as $acol)
-
-            <div class="block w-fit">
-                @foreach ($anodes as $anode)
-                @if( $anode->acol_id == $acol->id)
-                <!-- <div class="bg-white">
-                <p class="text-black">{{$anode['name']}}</p>
-             </div> -->
-
-
-                <div class="mx-2">
-
-
-                    <x-block-line-v></x-block-line-v>
-
-                    <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
-
-                    <?php
-                    $Nname = $anode['name']
-                    ?>
-
-                    <script>
-                        console.log("{{$anode['name']}}" + ' is printed'); //<== cara reference php variable ke script
-                    </script>  
-
-                </div>
-                
-                <div class="flex bg-white">
-                @foreach($anodesx as $anodex)
-                @if($anodex->parent_id == $anode->id)
-                <script>
-                    console.log("{{$anodex['name']}}" + ' detected - child of ' + "{{$anode['name']}}");
-                </script>
-
-                
-                    <div class="mx-2">
-
-                        
-                        <x-block-line-v></x-block-line-v>
-
-                        <x-block-rect color="{{$anodex['color']}}" name="{{$anodex['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
-                        
-
-                        <?php
-                        $Nname = $anode['name']
-                        ?>
-
-                        <script>
-                            console.log("{{$anodex['name']}}" + ' is printed'); //<== cara reference php variable ke script
-                        </script>
-
-                    </div>
-                
-                @endif
-                @endforeach
-                </div>
-
-                @endif
-                @endforeach
-            </div>
-            @endforeach
-            
-        </div>
-
-
-    </div>
 
 
 

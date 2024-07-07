@@ -41,11 +41,19 @@ class DatabaseSeeder extends Seeder
             'name' => 'Row3'
         ]);
 
+        Arow::create([
+            'name' => 'Row4'
+        ]);
+
+        Arow::create([
+            'name' => 'Row5'
+        ]);
+
 
         Anode::create([
             'name' => 'Node1',
-            'color' => 'red',
-            'acol_id'=> '1',
+            'color' => 'white',
+            'acol_id'=> '2',
             'arow_id'=> '1',
             'parent_id'=>'0'
         ]);
@@ -53,93 +61,191 @@ class DatabaseSeeder extends Seeder
         Anode::create([
             'name' => 'Node2',
             'color' => 'blue',
-            'acol_id'=> '2',
-            'arow_id'=> '1',
-            'parent_id'=>'0'
+            'acol_id'=> '1',
+            'arow_id'=> '2',
+            'parent_id'=>'2'
         ]);
 
         Anode::create([
             'name' => 'Node3',
-            'color' => 'yellow',
-            'acol_id'=> '3',
-            'arow_id'=> '1',
+            'color' => 'blue',
+            'acol_id'=> '2',
+            'arow_id'=> '2',
             'parent_id'=>'3'
-
         ]);
 
         Anode::create([
             'name' => 'Node4',
-            'color' => 'green',
-            'acol_id'=> '1',
+            'color' => 'blue',
+            'acol_id'=> '3',
             'arow_id'=> '2',
-            'parent_id'=>'1'
-
-
+            'parent_id'=>'4'
         ]);
 
+        //--------------------------
         Anode::create([
             'name' => 'Node5',
-            'color' => 'magenta',
+            'color' => 'yellow',
             'acol_id'=> '1',
-            'arow_id'=> '2',
-            'parent_id'=>'1'
-
-
+            'arow_id'=> '3',
+            'parent_id'=>'2'
         ]);
 
         Anode::create([
             'name' => 'Node6',
-            'color' => 'orange',
+            'color' => 'yellow',
             'acol_id'=> '1',
             'arow_id'=> '3',
-            'parent_id'=>'4'
-
+            'parent_id'=>'2'
         ]);
 
         Anode::create([
             'name' => 'Node7',
-            'color' => 'purple',
+            'color' => 'yellow',
             'acol_id'=> '1',
             'arow_id'=> '3',
-            'parent_id'=>'4'
-
+            'parent_id'=>'5'
         ]);
 
         Anode::create([
             'name' => 'Node8',
-            'color' => 'white',
+            'color' => 'yellow',
             'acol_id'=> '1',
             'arow_id'=> '3',
-            'parent_id'=>'4'
-
+            'parent_id'=>'5'
         ]);
 
         Anode::create([
             'name' => 'Node9',
-            'color' => 'gray',
+            'color' => 'yellow',
             'acol_id'=> '1',
             'arow_id'=> '3',
             'parent_id'=>'5'
-
         ]);
 
         Anode::create([
             'name' => 'Node10',
-            'color' => 'gray',
+            'color' => 'orange',
             'acol_id'=> '1',
             'arow_id'=> '3',
-            'parent_id'=>'5'
-
+            'parent_id'=>'6'
         ]);
 
         Anode::create([
             'name' => 'Node11',
-            'color' => 'gray',
+            'color' => 'orange',
             'acol_id'=> '1',
             'arow_id'=> '3',
-            'parent_id'=>'5'
-
+            'parent_id'=>'6'
         ]);
 
+        Anode::create([
+            'name' => 'Node12',
+            'color' => 'orange',
+            'acol_id'=> '1',
+            'arow_id'=> '3',
+            'parent_id'=>'6'
+        ]);
+
+        //------------------------------------
+
+        Anode::create([
+            'name' => 'Node13',
+            'color' => 'purple',
+            'acol_id'=> '2',
+            'arow_id'=> '3',
+            'parent_id'=>'3'
+        ]);
+
+        Anode::create([
+            'name' => 'Node14',
+            'color' => 'purple',
+            'acol_id'=> '2',
+            'arow_id'=> '3',
+            'parent_id'=>'3'
+        ]);
+
+        Anode::create([
+            'name' => 'Node15',
+            'color' => 'purple',
+            'acol_id'=> '2',
+            'arow_id'=> '3',
+            'parent_id'=>'3'
+        ]);
+
+        Anode::create([
+            'name' => 'Node16',
+            'color' => 'green',
+            'acol_id'=> '3',
+            'arow_id'=> '3',
+            'parent_id'=>'4'
+        ]);
+
+        Anode::create([
+            'name' => 'Node17',
+            'color' => 'green',
+            'acol_id'=> '3',
+            'arow_id'=> '3',
+            'parent_id'=>'4'
+        ]);
+
+        Anode::create([
+            'name' => 'Node18',
+            'color' => 'green',
+            'acol_id'=> '3',
+            'arow_id'=> '3',
+            'parent_id'=>'4'
+        ]);
+
+        Anode::create([
+            'name' => 'Node19',
+            'color' => 'green',
+            'acol_id'=> '3',
+            'arow_id'=> '3',
+            'parent_id'=>'4'
+        ]);
+
+        //-------------------------------
+
+
+        Anode::create([
+            'name' => 'Node20',
+            'color' => 'red',
+            'acol_id'=> '3',
+            'arow_id'=> '4',
+            'parent_id'=>'18'
+        ]);
+
+        Anode::create([
+            'name' => 'Node21',
+            'color' => 'red',
+            'acol_id'=> '3',
+            'arow_id'=> '4',
+            'parent_id'=>'18'
+        ]);
+
+        Anode::create([
+            'name' => 'Node22',
+            'color' => 'red',
+            'acol_id'=> '3',
+            'arow_id'=> '4',
+            'parent_id'=>'18'
+        ]);
+
+        Anode::create([
+            'name' => 'Node23',
+            'color' => 'navy',
+            'acol_id'=> '3',
+            'arow_id'=> '5',
+            'parent_id'=>'22'
+        ]);
+
+        Anode::create([
+            'name' => 'Node24',
+            'color' => 'navy',
+            'acol_id'=> '3',
+            'arow_id'=> '5',
+            'parent_id'=>'22'
+        ]);
     }
 }
