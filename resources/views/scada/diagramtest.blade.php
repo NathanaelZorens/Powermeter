@@ -19,15 +19,26 @@ $d1 = "A";
 $d2 = "B";
 $d3 = "C";
 
+
+
 ?>
 
 <script>
+    
+
+
     function addBlock() {
         // var code = '<p class="h-4 w-fit p-4 bg-blue-300">TEST<p/>';
         // document.getElementById("myId").innerHTML = code;
         tarnum = document.getElementById("target").value;
 
-        document.getElementById(`slot${tarnum}`).innerHTML = `<x-block-line-v></x-block-line-v>`;
+        document.getElementById(`slot${tarnum}`).innerHTML = `
+        <x-block-line-v></x-block-line-v>` +
+        `<h1 class="text-white">${tarnum}</h1>
+        <x-block-rect color="white" name="Utama" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+        `
+
+        ;
 
     }
 

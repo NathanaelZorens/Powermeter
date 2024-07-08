@@ -22,43 +22,21 @@ $d3 = "C";
 ?>
 
 <script>
-    function addBlock() {
-        // var code = '<p class="h-4 w-fit p-4 bg-blue-300">TEST<p/>';
-        // document.getElementById("myId").innerHTML = code;
-        tarnum = document.getElementById("target").value;
+    function showSide(name,color) {
+        document.getElementById("sideBar").style.display = "block";
 
-        document.getElementById(`slot${tarnum}`).innerHTML = `<x-block-line-v></x-block-line-v>`;
+        var newName = name;
+        document.getElementById('rectName').innerHTML = "Nama: " + newName;
+        document.getElementById('sideBarI').style.borderColor= color;
+
 
     }
 
-    function changeColor(color) {
-        const list = document.getElementById("test2").classList;
-        list.remove("bg-blue-600");
-        //list.add("bg-red-600");
-        list.add(`bg-${color}-600`); //PENTING!!, Referensi cara naruh variabel utk dimasukkin ke attribute/class
-    }
-
-
-    // document.getElementById("jumlah").onclick = function() {
-    //     num=document.getElementById("jumlah").value
-    //     alert(num);
-    //     //myFunction()
-    // };
-
-    function myFunction() {
-        num = document.getElementById("jumlah").value
-        //document.getElementById("demo").innerHTML = num;
-        const list = document.getElementById("demo").classList;
-
-        list.remove(list.item(5));
-        list.add(`grid-cols-${num}`);
-        //alert(list.item(5)) 
-
-
-
+    function hideSide() {
+        document.getElementById("sideBar").style.display = "none";
     }
 </script>
-</script>
+
 
 
 
@@ -107,7 +85,7 @@ $d3 = "C";
 
         </div>
 
-        <div class="rounded-md border-2 border-dashed border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+        <div class="rounded-md border-2 border-solid border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
 
            @foreach($acols as $acol)
            <div class="border border-dotted border-green-400 p-3 m-2">
@@ -118,32 +96,43 @@ $d3 = "C";
                     
                     @if($anode->acol_id == $acol->id)
                                     @if ($anode->id == $anode->parent_id)
-                                    <div class="text-whte bg-red-400 p-3 m-2" >
+                                    <div class="text-whte bg-red-400 p-3 my-2 mx-auto w-fit " >
                                         <h1>{{$anode['name']}}</h1>
                                     </div>
-                                    <div class="border border-yellow-500 border-solid m-2 flex" id="node{{$anode['id']}}">
+                                    <div class="border border-yellow-500 border-solid m-2 p-2 flex" id="node{{$anode['id']}}">
                                     </div>
                                     @else
+                                        <script>
+                                            tarnum = "node{{$anode['parent_id']}}"
+                                            
+                                            divContX = `<div class="border-white border border-dashed mx-1">
+                                                        <div class="text-whte bg-orange-400 p-3 my-2 mx-auto w-fit">
+                                                        {{$anode['name']}}
+                                                        </div>
 
-                                    <script>
-                                        tarnum = "node{{$anode['parent_id']}}"
-                                        
-                                        divCont = `<div>
-                                                    <div class="text-whte bg-orange-400 p-3 m-2">
-                                                    {{$anode['name']}}
-                                                    </div>
-                                                    <div class="text-whte p-3 m-2 flex" id="node{{$anode['id']}}"> 
-                                                    </div>
-                                                   </div>`;
+                                                        <div class="text-whte p-1 m-1 flex" id="node{{$anode['id']}}"> 
+                                                        </div>
+                                                    </div>`;
+                                            
+                                                    
+                                            divCont = ` <div class="border-white border border-dashed mx-1">
+                                                        <x-block-line-v></x-block-line-v>
+                                                        <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
 
-                                        newDiv = document.createElement('div');
+                                                        
+                                                        <div class="text-whte p-1 m-1 flex" id="node{{$anode['id']}}"> 
+                                                        </div>
+                                                    </div>`;
+                                            
 
-                                        newDiv.innerHTML = divCont;
+                                            newDiv = document.createElement('div');
 
-                                        parentDiv=document.getElementById(`${tarnum}`);
-                                        
-                                        parentDiv.appendChild(newDiv);
-                                    </script>
+                                            newDiv.innerHTML = divCont;
+
+                                            parentDiv=document.getElementById(`${tarnum}`);
+                                            
+                                            parentDiv.appendChild(newDiv);
+                                        </script>
                                     
                                     @endif
                                     

@@ -1,9 +1,6 @@
 <?php
-
 $wid = 192;
 $hei = 120;
-
-
 
 
 $col = "$color";
@@ -12,7 +9,7 @@ $n = "$name"
 
 ?>
 
-<script>
+<!-- <script>
     //var a, b, c;
 
     function showSide(name,color) {
@@ -34,7 +31,7 @@ $n = "$name"
 
         alert(name)
     }
-</script>
+</script> -->
 
 
 <div>
@@ -55,10 +52,10 @@ $n = "$name"
                             Data 1: {{$desc1}}
                         </li>
                         <li>
-                            Data 2:
+                            Data 2: {{$desc2}}
                         </li>
                         <li>
-                            Data 3:
+                            Data 3: {{$desc3}}
                         </li>
                     </ul>
                 </div>
@@ -70,7 +67,7 @@ $n = "$name"
     </div>
     <!-- ========= SideBar ============ -->
 
-    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-52 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
+    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-32 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
         <div class="">
@@ -79,16 +76,15 @@ $n = "$name"
                 <div class="m-2">
                     <div class="flex truncate">
                         <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>
+                        
                         <svg class="justify-end" height="20" width="80" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="10,1 15,19 5,19" style="fill: <?php echo $col ?> ;stroke:black;stroke-width:2" />
+                            <polygon points="10,7 15,19 5,19" style="fill: <?php echo $col ?> ;stroke:black;stroke-width:2" />
                         </svg>
                     </div>
-                    <p class=" w-fit">{{$name}}</p>
 
-                    <div class=" grid-cols-2 hidden md:grid" style="color:black">
+                    <div class="hidden md:flex" style="color:black">
                         <p class="h-fit text-sm">Data 1: {{$desc1}}</p>
-                        <p class="h-fit text-sm">Data 2: {{$desc2}}</p>
-                        <p class="h-fit text-sm">Data 3: {{$desc3}}</p>
+                        
 
                     </div>
 

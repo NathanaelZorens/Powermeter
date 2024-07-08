@@ -27,7 +27,7 @@ $d3 = "C";
         Test App
     </h1>
 
-    <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-2 p-5 m-auto md:m-auto overflow-auto">
+    <div class="rounded-md border-2 border-solid border-gray-200 grid grid-cols-5 w-fit md:w-fit h-auto gap-0 p-5 m-auto md:m-auto overflow-auto">
 
 
         <x-block-blank></x-block-blank>
