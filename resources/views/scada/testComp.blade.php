@@ -80,6 +80,7 @@ $d3 = "C";
         <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
         <x-block-joint-x></x-block-joint-x>
         <x-block-rect colorText="black" color="yellow" :name="$n3" :desc1="$d1" :desc2="$d2" :desc3="$d3"></x-block-rect>
+        <x-block-joint-ldl></x-block-joint-ldl>
 
 
 
