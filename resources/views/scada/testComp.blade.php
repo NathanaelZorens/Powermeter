@@ -86,6 +86,23 @@ $d3 = "C";
 
 
     </div>
+
+    <div class="m-3">
+        <svg class="bg-blue-600"  width="350" height="250" viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="circle" markerWidth="100" markerHeight="100" refX="0" refY="0" >
+            <circle cx="0" cy="0" r="3" fill="black" />
+            </marker>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+            </marker>
+        </defs>
+        <line x1="50" y1="100" x2="300" y2="200" stroke="red" stroke-width="3" marker-start="url(#circle)" marker-end="url(#arrow)" />
+        
+        </svg>
+
+    </div>
+
 </body>
 
 </html>

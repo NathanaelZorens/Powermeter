@@ -35,18 +35,12 @@
 
 
 
-<body class="flex flex-col gap-y-4 bg-black p-4 ">
-    <h1 class="text-3xl font-bold underline text-white ">
-        Test App
-    </h1>
+<body class="flex flex-col  bg-black p-4 ">
+    
 
 
-  <div class="border-2 border-solid border-white p-2 w-fit">
+  <div class="border-2 border-solid border-white p-2 w-fit md:scale-95 m-0">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
-
-        <div id="test2" class="w-fit text-white bg-orange-500">
-            test branch
-        </div>
 
 
         <div class=" mx-2 ">
@@ -58,11 +52,11 @@
 
         </div>
 
-        <div class="rounded-md border-2 border-solid border-gray-200 flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+        <div class="rounded-md border-2 border-solid border-gray-200 block md:flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
 
            @foreach($acols as $acol)
-           <div class="border border-dotted border-green-400 p-3 m-2">
-                <h1 class="text-white">Col</h1>
+           <div class="border-0 border-dotted border-green-400 p-3 m-2 ">
+                <!-- <h1 class="text-white">Col</h1> -->
 
 
                 @foreach($anodes as $anode)
@@ -74,7 +68,7 @@
                                         <x-block-line-v></x-block-line-v>
 
                                     </div>
-                                    <div class="border border-yellow-500 border-solid my-0 p-2 flex" id="node{{$anode['id']}}">
+                                    <div class="border border-yellow-500 border-solid my-0 mx-auto p-2 flex w-fit" id="node{{$anode['id']}}">
                                     </div>
                                     @else
 
@@ -145,7 +139,7 @@
                                             </script>
                                         @elseif($anode->id==$anodeHlf->id)
                                             <script>
-                                                line=`<x-block-joint-x></x-block-joint-x>`
+                                                line=`<x-block-joint-t></x-block-joint-t>`
                                                 //line=`Fuu`
                                             </script>
                                         @else
@@ -163,14 +157,17 @@
                                             tarnum = "node{{$anode['parent_id']}}"
                                             
                                                     
-                                            divCont = ` <div class="border-white border-0 border-dashed mx-1">`+
+                                            divCont = ` <div class="border-white border-0 border-dashed mx-0">`+
                                                         `<div id="line{{$anode['id']}}" class="border-green-400 border-0 border-solid w-full mx-auto">`+
                                                             `<div class="mx-auto border-green-400 border-0 border-solid">`+
                                                             line+
                                                             `</div>`+
                                                         `</div>`+
                                                         
-                                                        `<x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                                                        `<div class="m-1">
+                                                        <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                                                        </div>
+
                                                         <div>`+
                                                             downL+
                                                         `</div>`+
