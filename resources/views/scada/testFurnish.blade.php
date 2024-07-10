@@ -49,7 +49,7 @@
 
 
 
-            <x-block-rect color="white" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+            <x-block-rect color="white" id="0" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
             <x-block-line-v></x-block-line-v>
 
         </div>
@@ -66,7 +66,7 @@
                     @if($anode->acol_id == $acol->id)
                                     @if ($anode->parent_id==1)
                                     <div class="my-0 mx-auto w-fit" >
-                                        <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                                        <x-block-rect color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
                                         <x-block-line-v></x-block-line-v>
 
                                     </div>
@@ -167,7 +167,7 @@
                                                         `</div>`+
                                                         
                                                         `<div class="m-1">
-                                                        <x-block-rect color="{{$anode['color']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                                                        <x-block-rect color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
                                                         </div>
 
                                                         <div>`+

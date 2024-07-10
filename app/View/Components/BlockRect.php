@@ -17,6 +17,8 @@ class BlockRect extends Component
         
 
         public string $name,
+        public string $id,
+
 
         public string $desc1,
         public string $desc2,

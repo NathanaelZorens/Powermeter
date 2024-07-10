@@ -75,7 +75,7 @@ $n = "$name"
             <button class="" onclick="showSide('{{$name}}','{{$color}}')" style="display:block">
                 <div class="m-2">
                     <div class="flex truncate">
-                        <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>
+                        <h4 class="text-gray-900 text-md md:text-lg font-bold mr-1">#{{$id}}</h4>
                         
                         <svg class="justify-end" height="20" width="80" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="10,7 15,19 5,19" style="fill: <?php echo $col ?> ;stroke:black;stroke-width:2" />
@@ -83,7 +83,7 @@ $n = "$name"
                     </div>
 
                     <div class="hidden md:flex" style="color:black">
-                        <p class="h-fit text-sm">Data 1: {{$desc1}}</p>
+                        <p class="h-fit text-sm">Name: {{$name}}</p>
                         
 
                     </div>

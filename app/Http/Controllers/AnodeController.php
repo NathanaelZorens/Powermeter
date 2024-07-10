@@ -16,8 +16,10 @@ class AnodeController extends Controller
     {
         //
         $anodes = Anode::all();
+        $acols = Acol::all();
 
-        return view('scada.nodes.index', ['anodes' => $anodes]);
+
+        return view('scada.nodes.index', ['anodes' => $anodes, 'acols'=>$acols]);
     }
 
     /**

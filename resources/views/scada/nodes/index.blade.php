@@ -43,14 +43,13 @@
     </h1>
 
     <!-- <a class="w-fit p-1 m-4 bg-blue-300" href="/nodes/create">Add</a> -->
+
+    <div class="mx-auto bg-gray-700">
     <button class="border-2 border-gray-300 border-solid w-24 p-1 m-4 bg-gray-800 hover:bg-gray-400" onclick="showSide()">Add</button>
 
+    <div class="mx-auto">
 
-
-
-    <div>
-
-        <table class="gap-2 border-2 border-white border-solid border-spacing-2">
+        <table class="gap-2 border-2 border-white border-solid border-spacing-2 mx-auto">
             <tr class="border-2 border-white border-solid">
                 <th>No.</th>
                 <th>Nama</th>
@@ -99,12 +98,14 @@
 
     </div>
 
+    </div>
+
 
 
     <p class="text-yellow-200 bg-black">test</p>
 
     <!-- ========= SideBar ============ -->
-    <div class="z-50 " id="sideBar" style="display:block;">
+    <div class="z-50 " id="sideBar" style="display:none;">
         <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Add Node</h1>
@@ -122,27 +123,39 @@
 
                         <div class="m-2">
                             <label for="column">Column:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent" id="parent">
+                                <option disabled selected value> -- select column -- </option>
+                                @foreach($acols as $acol)
+                                    <option value="{{$acol['id']}}"><p>{{$acol['name']}}</p></option>
+                                @endforeach
+
+                            </select><br>
                         </div>
 
                         <div class="m-2">
                             <label for="parent">Parent:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent" id="parent">
+                                <option disabled selected value> -- select node -- </option>
+                                @foreach($anodes as $anode)
+                                    <option value="{{$anode['id']}}"><p>#{{$anode['id']}}</p></option>
+                                @endforeach
+
+                            </select><br>
                         </div>
 
                         <div class="m-2 ">
                             <label for="color">Color:</label><br>
                             <select class="border-black border-solid border h-8 text-black px-1 w-full" name="color" id="color">
                                 <option disabled selected value> -- select color -- </option>
-                                <option value="red">Red 🔥</option>
-                                <option value="blue">Blue 💧</option>
-                                <option value="yellow">Yellow ⚡</option>
-                                <option value="gray">Gray 💿</option>
-                                <option value="green">Green 🍀</option>
-                                <option value="magenta">Pink 🌺</option>
-                                <option value="white">White 🐑</option>
-                                <option value="purple">Purple 🍇</option>
-                                <option value="orange">Orange 🍊</option>
+                                <option value="red">🔥 Red</option>
+                                <option value="blue">💧 Blue </option>
+                                <option value="yellow">⚡ Yellow</option>
+                                <option value="gray">💿 Gray </option>
+                                <option value="green">🍀 Green </option>
+                                <option value="magenta">🌺 Pink </option>
+                                <option value="white">🐑 White </option>
+                                <option value="purple">🍇 Purple </option>
+                                <option value="orange">🍊 Orange </option>
 
 
                             </select><br>
