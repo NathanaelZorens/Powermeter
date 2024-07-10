@@ -13,8 +13,8 @@ class Arow extends Model
 
     protected $fillable = ['name'];
 
-    public function anodes(): HasMany
-    {
-        return $this->hasMany(Anode::class);
-    }
+    // public function anodes(): HasMany
+    // {
+    //     return $this->hasMany(Anode::class);
+    // }
 }

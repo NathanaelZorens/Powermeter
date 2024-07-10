@@ -15,8 +15,8 @@ class Anode extends Model
         return $this->belongsTo(Acol::class);
     }
 
-    public function arow(): BelongsTo
-    {
-        return $this->belongsTo(Arow::class);
-    }
+    // public function arow(): BelongsTo
+    // {
+    //     return $this->belongsTo(Arow::class);
+    // }
 }

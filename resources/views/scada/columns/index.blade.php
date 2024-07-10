@@ -43,36 +43,7 @@
     </h1>
 
 
-    <!-- ========= SideBar ============ -->
-    <div class="z-50 " id="sideBar" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
-            <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Add Column</h1>
-
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
-
-                <div class="m-auto w-fit">
-
-                    <form method="post" action="/columns">
-                        @csrf
-                        <div class="m-2">
-                            <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
-                        </div>
-
-                        <div class="w-fit mx-auto bg-green-400">
-                            <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24" type="submit" id="submitCol">Submit</button>
-                        </div>
-                    </form>
-
-                </div>
-
-            </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Cancel</button>
-
-        </div>
-    </div>
-    <!-- ========= SideBar ============ -->
 
 
     <div>
@@ -105,6 +76,36 @@
 
     <p class="text-yellow-200 bg-black">test</p>
 
+        <!-- ========= SideBar ============ -->
+        <div class="z-50" id="sideBar" style="display:none;">
+        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+
+            <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Add Column</h1>
+
+            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+
+                <div class="m-auto w-fit">
+
+                    <form method="post" action="/columns">
+                        @csrf
+                        <div class="m-2">
+                            <label for="name">Nama:</label><br>
+                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
+                        </div>
+
+                        <div class="w-fit mx-auto bg-green-400">
+                            <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24" type="submit" id="submitCol">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Cancel</button>
+
+        </div>
+    </div>
+    <!-- ========= SideBar ============ -->
 
 
     <!-- <script>
