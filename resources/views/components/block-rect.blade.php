@@ -34,9 +34,9 @@ $n = "$name"
 </script> -->
 
 
-<div>
+<div class="">
     <!-- ========= SideBar ============ -->
-    <div class="z-50 " id="sideBar" style="display:none;">
+    <div class="z-50" id="sideBar" style="display:none;">
         <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
             
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-3xl font-bold">Detail</h1>
@@ -67,12 +67,12 @@ $n = "$name"
     </div>
     <!-- ========= SideBar ============ -->
 
-    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-32 h-full md:h-fit sticky z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
+    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-32 h-full md:h-fit  z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
         <div class="">
 
-            <button class="" onclick="showSide('<?php echo $name ?>','<?php echo $col ?>')" style="">
+            <button class="" onclick="showSide('{{$name}}','{{$color}}')" style="display:block">
                 <div class="m-2">
                     <div class="flex truncate">
                         <h4 class="text-gray-700 text-md md:text-lg font-bold mr-1">{{$name}}</h4>

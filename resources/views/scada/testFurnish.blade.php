@@ -13,6 +13,8 @@
 <script>
     function showSide(name,color) {
         document.getElementById("sideBar").style.display = "block";
+        //document.getElementById("sideBar").style.position = "fixed";
+
 
         var newName = name;
         document.getElementById('rectName').innerHTML = "Nama: " + newName;
@@ -35,11 +37,11 @@
 
 
 
-<body class="flex flex-col  bg-black p-4 ">
+<body class="flex flex-col  bg-black  w-fit h-full overflow-auto">
     
+    <div class="bg-orange-300 text-black w-full h-12"> Navbar</div>
 
-
-  <div class="border-2 border-solid border-white p-2 w-fit md:scale-95 m-0">
+  <div class="border-0 border-solid border-white p-2 w-fit overflow-auto m-5">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
 
@@ -208,6 +210,7 @@
             
         </div>
 
+        
 
     </div>
 
@@ -217,7 +220,35 @@
 
 
 
+    <!-- <div class="z-50 fixed" id="sideBarX" style="display:none;">
+        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+            
+            <h1 class="mt-5 mx-auto h-fit text-xl md:text-3xl font-bold">Detail</h1>
 
+            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+
+                <div class="m-3 p-2">
+
+
+                    <h1 class="text-xl font-bold" id="rectName">name</h1>
+                    <ul>
+                        <li>
+                            Data 1: aa
+                        </li>
+                        <li>
+                            Data 2: aa
+                        </li>
+                        <li>
+                            Data 3: aa
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Hide</button>
+
+        </div>
+    </div> -->
 
 
 

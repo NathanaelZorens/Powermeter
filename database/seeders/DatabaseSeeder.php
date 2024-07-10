@@ -255,5 +255,29 @@ class DatabaseSeeder extends Seeder
             'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
+
+        Anode::create([
+            'name' => 'Node26',
+            'color' => 'magenta',
+            'acol_id'=> '1',
+            'arow_id'=> '',
+            'parent_id'=>'8'
+        ]);
+
+        Anode::create([
+            'name' => 'Node27',
+            'color' => 'magenta',
+            'acol_id'=> '1',
+            'arow_id'=> '',
+            'parent_id'=>'8'
+        ]);
+
+        Anode::create([
+            'name' => 'Node28',
+            'color' => 'magenta',
+            'acol_id'=> '1',
+            'arow_id'=> '',
+            'parent_id'=>'8'
+        ]);
     }
 }
