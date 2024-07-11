@@ -61,7 +61,7 @@ $n = "$name"
                 </div>
 
             </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Hide</button>
+            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 text-black rounded" onclick="hideSide()">Hide</button>
 
         </div>
     </div>

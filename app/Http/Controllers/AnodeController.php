@@ -16,10 +16,11 @@ class AnodeController extends Controller
     {
         //
         $anodes = Anode::all();
+        $anodesCsorts = Anode::orderby('acol_id','ASC')->get();
         $acols = Acol::all();
 
 
-        return view('scada.nodes.index', ['anodes' => $anodes, 'acols'=>$acols]);
+        return view('scada.nodes.index', ['anodes' => $anodes, 'acols'=>$acols, 'anodesCsorts'=>$anodesCsorts ]);
     }
 
     /**
