@@ -97,6 +97,7 @@ Route::get('/fin', function () {
     //$anodes = Anode::where ('acol_id', '=', '1')->get();
     
     $anodes = Anode::all();
+    $anodesX = Anode::orderby('id','ASC');
     
 
     //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
@@ -127,4 +128,4 @@ Route::get('/dash', function () {
 //Route::get('/columns/create', [AcolController::class, 'create'])->name('columns.create');
 Route::resource('/columns', AcolController::class);
 
-Route::resource('/nodes', AnodeController::class);
+Route::resource('/anodes', AnodeController::class);

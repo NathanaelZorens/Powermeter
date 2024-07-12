@@ -17,7 +17,7 @@
 
     <div class="m-auto w-fit">
 
-        <form method="post" action="/nodes">
+        <form method="post" action="/anodes">
             @csrf
             <label for="name">Name:</label><br>
             <input class="border-black border-solid border" type="text" id="name" name="name"><br>

@@ -7,20 +7,43 @@ use App\Models\Acol;
 
 use Illuminate\Http\Request;
 
+
+
 class AnodeController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        $anodes = Anode::all();
+        
+        
+        $anodes = Anode::orderby('id','ASC');
+        $anodeall = Anode::All();
+
         $anodesCsorts = Anode::orderby('acol_id','ASC')->get();
         $acols = Acol::all();
+        
+        if(request()->has('search'))
+        {
+            if(request()->get('searchFilter','')=='all'){
+                $anodes= Anode::orderby('id','ASC')->where('name','like','%' . request()->get('search','') . '%')->orWhere('color','like','%' . request()->get('search','') . '%')->orWhere('id','like','%' . request()->get('search','') . '%');
+            }
+
+            else{
+                $anodes= Anode::orderby('id','ASC')->where(request()->get('searchFilter',''),'like','%' . request()->get('search','') . '%');
+            }
+        }
+
+        if(request()->has('sort'))
+        {
+            $anodes= Anode::orderby(request()->get('sort',''),'ASC');
+        }
 
 
-        return view('scada.nodes.index', ['anodes' => $anodes, 'acols'=>$acols, 'anodesCsorts'=>$anodesCsorts ]);
+        return view('scada.anodes.index', ['anodes' => $anodes->paginate(15), 'anodeall'=>$anodeall, 'acols'=>$acols, 'anodesCsorts'=>$anodesCsorts ]);
     }
 
     /**
@@ -32,7 +55,7 @@ class AnodeController extends Controller
         $acols = Acol::all();
         $anodes = Anode::all();
 
-        return view('scada.nodes.create', ['anodes' => $anodes, 'acols'=>$acols]);
+        return view('scada.anodes.create', ['anodes' => $anodes, 'acols'=>$acols]);
     }
 
     /**
@@ -41,7 +64,18 @@ class AnodeController extends Controller
     public function store(Request $request)
     {
         //
-        return $request;
+        $validatedData= $request->validate([
+            'name' => 'required|max:255',
+            'color' => 'required|max:255',
+            'parent_id' => 'required|max:255',
+            'acol_id' => 'required|max:255',
+        ]);
+
+        Anode::create($validatedData);
+
+        
+
+        return redirect('/anodes');
     }
 
     /**
@@ -66,6 +100,30 @@ class AnodeController extends Controller
     public function update(Request $request, Anode $anode)
     {
         //
+        //
+
+        $rules = [ 
+            'name' => 'required|max:255',
+            'color' => 'required|max:255',
+            'parent_id' => 'required|max:255',
+            'acol_id' => 'required|max:255'
+        ];
+
+
+        // $anode=Anode::where('id', request()->get('id',''));
+
+        // $anode->name = request()->get('name','');
+        // $anode->color = request()->get('color', '');
+        // $anode->parent_id = request()->get('parent_id','');
+        // $anode->acol_id = request()->get('acol_id','');
+        // $anode->save();
+
+        $validatedData= $request->validate($rules);
+
+        Anode::where('id', $anode->id)->update($validatedData);
+
+        
+        return redirect('/anodes');
     }
 
     /**
@@ -74,5 +132,8 @@ class AnodeController extends Controller
     public function destroy(Anode $anode)
     {
         //
+        Anode::destroy($anode->id);
+
+        return redirect('/anodes');
     }
 }

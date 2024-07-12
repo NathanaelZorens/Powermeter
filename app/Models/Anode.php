@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
+
 class Anode extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name','color','acol_id','parent_id'];
+
     public function acol(): BelongsTo
     {
         return $this->belongsTo(Acol::class);

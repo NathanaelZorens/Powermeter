@@ -129,11 +129,19 @@
 
                                         </script>
                                         @if($anode->id==$anodeFst->id)
+                                            @if($allAnode=='1')
+                                            <script>
+                                                lineXX=`<x-block-joint-ldr></x-block-joint-ldr>`
+                                                lineXX=`<h1 class="text-white">FIRST</h1>`
+                                                line=`<x-block-joint-i></x-block-joint-i>`
+                                            </script>
+                                            @else
                                             <script>
                                                 line=`<x-block-joint-ldr></x-block-joint-ldr>`
                                                 lineXX=`<h1 class="text-white">FIRST</h1>`
                                                 lineX=`<x-block-line-h></x-block-line-h>`
                                             </script>
+                                            @endif
                                         @elseif($anode->id==$anodeLst->id)
                                             <script>
                                                 line=`<x-block-joint-ldl></x-block-joint-ldl>`
@@ -186,6 +194,8 @@
                                             parentDiv=document.getElementById(`${tarnum}`);
                                             
                                             parentDiv.appendChild(newDiv);
+ 
+                                            console.log("Node Created: "+ "{{$anode['id']}}");
                                             
                                         </script>
 
