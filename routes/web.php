@@ -97,7 +97,7 @@ Route::get('/fin', function () {
     //$anodes = Anode::where ('acol_id', '=', '1')->get();
     
     $anodes = Anode::all();
-    $anodesX = Anode::orderby('id','ASC');
+    $anodesX = Anode::orderby('id','ASC')->get();
     
 
     //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);

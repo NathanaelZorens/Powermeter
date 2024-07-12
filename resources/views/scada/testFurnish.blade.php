@@ -39,7 +39,7 @@
 
 <body class="flex flex-col  bg-black  w-fit h-full overflow-auto">
     
-    <div class="bg-orange-300 text-black w-full h-12"> Navbar</div>
+    <x-navbar-scada></x-navbar-cada>
 
   <div class="border-0 border-solid border-white p-2 w-fit overflow-auto m-5">
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->

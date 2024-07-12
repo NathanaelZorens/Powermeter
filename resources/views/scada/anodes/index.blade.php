@@ -98,14 +98,13 @@
 
 
 
-<body class="flex flex-col gap-y-4 text-white bg-black">
-    <h1 class="text-3xl font-bold underline bg-red-500 ">
-        Node List
-    </h1>
+<body class="flex flex-col gap-0 text-white bg-black">
+    
+    <x-navbar-scada></x-navbar-scada>
 
     <!-- <a class="w-fit p-1 m-4 bg-blue-300" href="/anodes/create">Add</a> -->
-
-    <div class="mx-auto" id="nodeOptions">
+    
+    <div class="mx-auto mt-4" id="nodeOptions">
         <div class="bg-gray-700 rounded mb-2 border-gray-400 border-2 border-solid flex">
             <button class="border-2 border-gray-300 border-solid w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSide()">
                 <div class="flex">
