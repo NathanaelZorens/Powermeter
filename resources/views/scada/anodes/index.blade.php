@@ -13,36 +13,40 @@
 
 <script>
     //var a, b, c;
+    
 
     function showSide() {
         document.getElementById("sideBar").style.display = "block";
+        
+
 
     }
 
     function showSideED(id, name, acol, parent, color) {
         document.getElementById("sideBarED").style.display = "block";
 
-        document.getElementById("nameED").value=name
-        document.getElementById("nameED").innerHTML= name
+        document.getElementById("nameED").value = name
+        document.getElementById("nameED").innerHTML = name
 
-        document.getElementById("selectedColumn").value=acol
-        document.getElementById("selectedColumn").innerHTML= acol
+        document.getElementById("selectedColumn").value = acol
+        document.getElementById("selectedColumn").innerHTML = acol
 
-        document.getElementById("selectedParent").value=parent
-        document.getElementById("selectedParent").innerHTML= parent
+        document.getElementById("selectedParent").value = parent
+        document.getElementById("selectedParent").innerHTML = parent
 
-        document.getElementById("selectedColor").value= color
+        document.getElementById("selectedColor").value = color
 
         let string = color;
-        nColor=string[0].toUpperCase() + string.slice(1);
+        nColor = string[0].toUpperCase() + string.slice(1);
 
-        document.getElementById("selectedColor").innerHTML= nColor 
+        document.getElementById("selectedColor").innerHTML = nColor
+
+
+        document.getElementById("idED").value = id
         
 
-        document.getElementById("idED").value=id
+        document.getElementById("editForm").action = "/anodes/" + id
 
-        document.getElementById("editForm").action="/anodes/"+id
-        
 
 
     }
@@ -93,17 +97,16 @@
 
         alert(name)
     }
-
 </script>
 
 
 
 <body class="flex flex-col gap-0 text-white bg-black">
-    
+
     <x-navbar-scada></x-navbar-scada>
 
     <!-- <a class="w-fit p-1 m-4 bg-blue-300" href="/anodes/create">Add</a> -->
-    
+
     <div class="mx-auto mt-4" id="nodeOptions">
         <div class="bg-gray-700 rounded mb-2 border-gray-400 border-2 border-solid flex">
             <button class="border-2 border-gray-300 border-solid w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSide()">
@@ -289,12 +292,12 @@
                             <form action="/anodes/{{$anode->id}}" method="post">
                                 @method('delete')
                                 @csrf
-                            <button class="bg-red-600 m-2 px-2 text-sm flex rounded border-solid border border-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6 m-auto">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                </svg>
-                                <p class="m-auto">Delete</p>
-                            </button>
+                                <button class="bg-red-600 m-2 px-2 text-sm flex rounded border-solid border border-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6 m-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                    <p class="m-auto">Delete</p>
+                                </button>
                             </form>
                         </div>
                     </td>
@@ -303,7 +306,7 @@
 
 
 
-                
+
 
                 @endforeach
 
@@ -357,7 +360,7 @@
                             <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parent">
                                 <option disabled selected value> -- select node -- </option>
                                 @foreach($anodeall as $anode)
-                                <option value="{{$anode['id']}}" id="selectParent" >
+                                <option value="{{$anode['id']}}" id="selectParent">
                                     <p>#{{$anode['id']}}</p>
                                 </option>
                                 @endforeach
@@ -369,7 +372,9 @@
                         <div class="m-2 ">
                             <label for="color">Color:</label><br>
                             <select class="border-black border-solid border h-8 text-black px-1 w-full" name="color" id="color">
+                                
                                 <option disabled selected value> -- select color -- </option>
+                                
                                 <option value="red">🔥 Red</option>
                                 <option value="blue">💧 Blue </option>
                                 <option value="yellow">⚡ Yellow</option>
@@ -379,7 +384,7 @@
                                 <option value="white">🐑 White </option>
                                 <option value="purple">🍇 Purple </option>
                                 <option value="orange">🍊 Orange </option>
-
+                                
 
                             </select><br>
                         </div>
@@ -402,84 +407,103 @@
 
     <!-- ========= SideBar: for EDIT ============ -->
     <div class="z-50 " id="sideBarED" style="display:none;">
-                    <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
-                        <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Edit Node</h1>
+            <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Edit Node</h1>
 
-                        <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
 
-                            <div class="m-auto w-fit">
+                <div class="m-auto w-fit">
 
-                                <form  action="/anodes" id="editForm" method="post">
-                                    @csrf
-                                    @method('put')
+                    <form action="/anodes" id="editForm" method="post">
+                        @csrf
+                        @method('put')
 
-                                    <div class="m-2">
-                                        <label for="name">Nama:</label><br>
-                                        <input class="border-black border-solid border h-8 text-black px-1" type="text" id="nameED" name="name"><br>
-                                    </div>
+                        <div class="m-2">
+                            <label for="name">Nama:</label><br>
+                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="nameED" name="name"><br>
+                        </div>
 
-                                    <div class="m-2">
-                                        <label for="column">Column:</label><br>
-                                        <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="column" >
-                                            <option selected id="selectedColumn">value</option>
-                                            <option> -- select column -- </option>
-                                            @foreach($acols as $acol)
-                                            <option value="{{$acol['id']}}">
-                                                <p>{{$acol['name']}}</p>
-                                            </option>
-                                            @endforeach
-                                        </select><br>
-
-                                    </div>
-
-                                    <div class="m-2">
-                                        <label for="parent">Parent:</label><br>
-                                        <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parent">
-                                            <option selected id="selectedParent">value</option>
-                                            <option> -- select node -- </option>
-                                            @foreach($anodeall as $anode)
-                                            <option value="{{$anode['id']}}">
-                                                <p>#{{$anode['id']}}</p>
-                                            </option>
-                                            @endforeach
-
-                                        </select><br>
-                                    </div>
-
-                                    <div class="m-2 ">
-                                        <label for="color">Color:</label><br>
-                                        <select class="border-black border-solid border h-8 text-black px-1 w-full" name="color" id="color">
-                                            <option selected id="selectedColor"> -- select color -- </option>
-                                            <option value="red">🔥 Red</option>
-                                            <option value="blue">💧 Blue </option>
-                                            <option value="yellow">⚡ Yellow</option>
-                                            <option value="gray">💿 Gray </option>
-                                            <option value="green">🍀 Green </option>
-                                            <option value="magenta">🌺 Pink </option>
-                                            <option value="white">🐑 White </option>
-                                            <option value="purple">🍇 Purple </option>
-                                            <option value="orange">🍊 Orange </option>
-
-
-                                        </select><br>
-                                    </div>
-
-                                    <input type="hidden" id="idED" name="id"><br>
-
-                                    <div class="w-fit mx-auto ">
-                                        <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24 rounded text-black" type="submit" id="submitNode">Submit</button>
-                                    </div>
-                                </form>
-
-                            </div>
+                        <div class="m-2">
+                            <label for="column">Column:</label><br>
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="column">
+                                <option selected id="selectedColumn">value</option>
+                                <option> -- select column -- </option>
+                                @foreach($acols as $acol)
+                                <option value="{{$acol['id']}}">
+                                    <p>{{$acol['name']}}</p>
+                                </option>
+                                @endforeach
+                            </select><br>
 
                         </div>
-                        <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
 
-                    </div>
+
+
+                        <div class="m-2">
+                            <label for="parent">Parent:</label><br>
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parent">
+                                <option selected id="selectedParent">value</option>
+                                <option> -- select node -- </option>
+
+
+                                <?php
+                                $selCol=2;
+                                $anodea = $anodeall->where('acol_id', $selCol);
+                                ?>
+
+                                @foreach($anodea as $anode)
+                                <option value="{{$anode['id']}}">
+                                    <p>#{{$anode['id']}}</p>
+                                </option>
+                                @endforeach
+
+                            </select><br>
+                        </div>
+
+                        <div class="m-2 ">
+                            <label for="color">Color:</label><br>
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="color" id="color">
+
+                                <option selected id="selectedColor"> -- select color -- </option>
+                                <option value="red">🔥 Red</option>
+                                <option value="blue">💧 Blue </option>
+                                <option value="yellow">⚡ Yellow</option>
+                                <option value="gray">💿 Gray </option>
+                                <option value="green">🍀 Green </option>
+                                <option value="magenta">🌺 Pink </option>
+                                <option value="white">🐑 White </option>
+                                <option value="purple">🍇 Purple </option>
+                                <option value="orange">🍊 Orange </option>
+
+
+
+                            </select><br>
+                        </div>
+
+                        <input type="hidden" id="idED" name="id"><br>
+                        <?php
+                        $anodePrt = $anodes->where('id', $anode['parent_id'])->first();
+                        $parentRow = $anodePrt->arow_id;
+                        $nodeRow = 1 + $parentRow;
+                        ?>
+                        @isset($parentRow)
+                        <input type="hidden" id="arow_id" name="arow_id" value='<?php echo $nodeRow ?>'><br>
+                        @endisset
+
+                        <div class="w-fit mx-auto ">
+                            <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24 rounded text-black" type="submit" id="submitNode">Submit</button>
+                        </div>
+                    </form>
+
                 </div>
-                <!-- ========= SideBar ============ -->
+
+            </div>
+            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
+
+        </div>
+    </div>
+    <!-- ========= SideBar ============ -->
 
 
 </body>

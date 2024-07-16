@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('acol_id');
             $table->foreign('acol_id')->references('id')->on('acols');
             //$table->string('arow_id')->default(null);
-            // $table->unsignedBigInteger('arow_id');
-            // $table->foreign('arow_id')->references('id')->on('arows');
+            $table->unsignedBigInteger('arow_id');
+            $table->foreign('arow_id')->references('id')->on('arows');
             $table->string('parent_id')->nullable();
             $table->timestamps();
         });

@@ -21,7 +21,9 @@ class AnodeController extends Controller
         
         
         $anodes = Anode::orderby('id','ASC');
-        $anodeall = Anode::All();
+        $anodeall = Anode::orderby('id','ASC')->get();
+        $anodeallX = Anode::where('acol_id','1')->get();
+
 
         $anodesCsorts = Anode::orderby('acol_id','ASC')->get();
         $acols = Acol::all();
@@ -106,7 +108,8 @@ class AnodeController extends Controller
             'name' => 'required|max:255',
             'color' => 'required|max:255',
             'parent_id' => 'required|max:255',
-            'acol_id' => 'required|max:255'
+            'acol_id' => 'required|max:255',
+            'arow_id' => 'required|max:255'
         ];
 
 

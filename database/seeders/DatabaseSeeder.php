@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node1',
             'color' => 'white',
             'acol_id'=> '2',
-            //'arow_id'=> '1',
+            'arow_id'=> '1',
             'parent_id'=>'0'
         ]);
 
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node2',
             'color' => 'blue',
             'acol_id'=> '1',
-            //'arow_id'=> '2',
+            'arow_id'=> '2',
             'parent_id'=>'1'
         ]);
 
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node3',
             'color' => 'blue',
             'acol_id'=> '2',
-            //'arow_id'=> '2',
+            'arow_id'=> '2',
             'parent_id'=>'1'
         ]);
 
@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node4',
             'color' => 'blue',
             'acol_id'=> '3',
-            //'arow_id'=> '2',
+            'arow_id'=> '2',
             'parent_id'=>'1'
         ]);
 
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node5',
             'color' => 'yellow',
             'acol_id'=> '1',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'2'
         ]);
 
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node6',
             'color' => 'yellow',
             'acol_id'=> '1',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'2'
         ]);
 
@@ -103,7 +103,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node7',
             'color' => 'yellow',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'5'
         ]);
 
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node8',
             'color' => 'yellow',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'5'
         ]);
 
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node9',
             'color' => 'yellow',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'5'
         ]);
 
@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node10',
             'color' => 'orange',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'6'
         ]);
 
@@ -135,7 +135,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node11',
             'color' => 'orange',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'6'
         ]);
 
@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node12',
             'color' => 'orange',
             'acol_id'=> '1',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'6'
         ]);
 
@@ -153,7 +153,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node13',
             'color' => 'purple',
             'acol_id'=> '2',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'3'
         ]);
 
@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node14',
             'color' => 'purple',
             'acol_id'=> '2',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'3'
         ]);
 
@@ -169,7 +169,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node15',
             'color' => 'purple',
             'acol_id'=> '2',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'3'
         ]);
 
@@ -177,7 +177,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node16',
             'color' => 'green',
             'acol_id'=> '3',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
 
@@ -185,7 +185,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node17',
             'color' => 'green',
             'acol_id'=> '3',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
 
@@ -193,7 +193,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node18',
             'color' => 'green',
             'acol_id'=> '3',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
 
@@ -201,7 +201,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node19',
             'color' => 'green',
             'acol_id'=> '3',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
 
@@ -212,7 +212,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node20',
             'color' => 'red',
             'acol_id'=> '3',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'18'
         ]);
 
@@ -220,7 +220,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node21',
             'color' => 'red',
             'acol_id'=> '3',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'18'
         ]);
 
@@ -228,7 +228,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node22',
             'color' => 'red',
             'acol_id'=> '3',
-            //'arow_id'=> '4',
+            'arow_id'=> '4',
             'parent_id'=>'18'
         ]);
 
@@ -236,7 +236,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node23',
             'color' => 'navy',
             'acol_id'=> '3',
-            //'arow_id'=> '5',
+            'arow_id'=> '5',
             'parent_id'=>'22'
         ]);
 
@@ -244,7 +244,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node24',
             'color' => 'navy',
             'acol_id'=> '3',
-            //'arow_id'=> '5',
+            'arow_id'=> '5',
             'parent_id'=>'22'
         ]);
 
@@ -252,7 +252,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node25',
             'color' => 'navy',
             'acol_id'=> '3',
-            //'arow_id'=> '3',
+            'arow_id'=> '3',
             'parent_id'=>'4'
         ]);
 
@@ -260,7 +260,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node26',
             'color' => 'magenta',
             'acol_id'=> '1',
-            //'arow_id'=> '',
+            'arow_id'=> '4',
             'parent_id'=>'8'
         ]);
 
@@ -268,7 +268,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node27',
             'color' => 'magenta',
             'acol_id'=> '1',
-            //'arow_id'=> '',
+            'arow_id'=> '4',
             'parent_id'=>'8'
         ]);
 
@@ -276,7 +276,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Node28',
             'color' => 'magenta',
             'acol_id'=> '1',
-            //'arow_id'=> '',
+            'arow_id'=> '4',
             'parent_id'=>'8'
         ]);
     }

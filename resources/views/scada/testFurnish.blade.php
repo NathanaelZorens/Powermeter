@@ -60,10 +60,12 @@
            <div class="border-0 border-dotted border-green-400 p-3 m-2 ">
                 <!-- <h1 class="text-white">Col</h1> -->
 
+                @foreach($arows as $arow)
+                
 
                 @foreach($anodes as $anode)
                     
-                    @if($anode->acol_id == $acol->id)
+                    @if($anode->acol_id == $acol->id and $anode->arow_id == $arow->id)
                                     @if ($anode->parent_id==1)
                                     <div class="my-0 mx-auto w-fit" >
                                         <x-block-rect color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
@@ -214,6 +216,8 @@
                         
                     
                     @endif
+                @endforeach
+
                 @endforeach
            </div>
            @endforeach
