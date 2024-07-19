@@ -82,5 +82,8 @@ class AcolController extends Controller
     public function destroy(Acol $acol)
     {
         //
+        Acol::destroy($acol->id);
+
+        return redirect()->back();
     }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src='{{ asset("customjs/anode_functions.js") }}'></script>
 
 
 </head>
@@ -15,82 +16,7 @@
     //var a, b, c;
     
 
-    function showSide() {
-        document.getElementById("sideBar").style.display = "block";
-        
-
-
-    }
-
-    function showSideED(id, name, acol, parent, color) {
-        document.getElementById("sideBarED").style.display = "block";
-
-        document.getElementById("nameED").value = name
-        document.getElementById("nameED").innerHTML = name
-
-        document.getElementById("selectedColumn").value = acol
-        document.getElementById("selectedColumn").innerHTML = acol
-
-        document.getElementById("selectedParent").value = parent
-        document.getElementById("selectedParent").innerHTML = parent
-
-        document.getElementById("selectedColor").value = color
-
-        let string = color;
-        nColor = string[0].toUpperCase() + string.slice(1);
-
-        document.getElementById("selectedColor").innerHTML = nColor
-
-
-        document.getElementById("idED").value = id
-        
-
-        document.getElementById("editForm").action = "/anodes/" + id
-
-
-
-    }
-
-    function hideSideED() {
-        document.getElementById("sideBarED").style.display = "none";
-
-    }
-
-    function showSearch() {
-        document.getElementById("searchBar").style.display = "block";
-        document.getElementById("searchButton").style.display = "none";
-
-        document.getElementById("sortBar").style.display = "none";
-        document.getElementById("sortButton").style.display = "block";
-
-
-
-    }
-
-    function showSort() {
-        document.getElementById("sortBar").style.display = "block";
-        document.getElementById("sortButton").style.display = "none";
-
-        document.getElementById("searchBar").style.display = "none";
-        document.getElementById("searchButton").style.display = "block";
-
-
-    }
-
-    function showFilter() {
-        document.getElementById("filterBar").style.display = "block";
-        document.getElementById("filterButton").style.display = "none";
-    }
-
-    function getFilter() {
-        filterVal = document.getElementById("filter").value;
-        document.getElementById(filterVal).style.display = "block";
-
-    }
-
-    function hideSide() {
-        document.getElementById("sideBar").style.display = "none";
-    }
+   
 
     function myFunc(name) {
         //name="Oi"
@@ -325,7 +251,7 @@
 
     <p class="text-yellow-200 bg-black">test</p>
 
-    <!-- ========= SideBar ============ -->
+    <!-- ========= SideBar Add============ -->
     <div class="z-50 " id="sideBar" style="display:none;">
         <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
@@ -344,10 +270,10 @@
 
                         <div class="m-2">
                             <label for="column">Column:</label><br>
-                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="column" onchange="setColVal()">
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="columnAdd" >
                                 <option disabled selected value> -- select column -- </option>
                                 @foreach($acols as $acol)
-                                <option value="{{$acol['id']}}" id="selectColumn">
+                                <option value="{{$acol['id']}}" id="colopt" class="colopt{{ $acol->id }}">
                                     <p>{{$acol['name']}}</p>
                                 </option>
                                 @endforeach
@@ -357,7 +283,8 @@
 
                         <div class="m-2">
                             <label for="parent">Parent:</label><br>
-                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parent">
+                            <div >
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parentAdd">
                                 <option disabled selected value> -- select node -- </option>
                                 @foreach($anodeall as $anode)
                                 <option value="{{$anode['id']}}" id="selectParent">
@@ -365,6 +292,7 @@
                                 </option>
                                 @endforeach
                             </select><br>
+                            </div>
                         </div>
 
                         
@@ -389,6 +317,12 @@
                             </select><br>
                         </div>
 
+                       
+
+                        <div id="rowAdd">
+                        <input type="hidden" name="arow_id" value='6'><br>
+                        </div>
+
                         <div class="w-fit mx-auto ">
                             <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24 rounded text-black" type="submit" id="submitNode">Submit</button>
                         </div>
@@ -401,7 +335,7 @@
 
         </div>
     </div>
-    <!-- ========= SideBar ============ -->
+    <!-- ========= SideBar Add============ -->
 
 
 
@@ -426,7 +360,7 @@
 
                         <div class="m-2">
                             <label for="column">Column:</label><br>
-                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="column">
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="acol_id" id="columnED">
                                 <option selected id="selectedColumn">value</option>
                                 <option> -- select column -- </option>
                                 @foreach($acols as $acol)
@@ -442,7 +376,7 @@
 
                         <div class="m-2">
                             <label for="parent">Parent:</label><br>
-                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parent">
+                            <select class="border-black border-solid border h-8 text-black px-1 w-full" name="parent_id" id="parentED">
                                 <option selected id="selectedParent">value</option>
                                 <option> -- select node -- </option>
 
@@ -452,7 +386,7 @@
                                 $anodea = $anodeall->where('acol_id', $selCol);
                                 ?>
 
-                                @foreach($anodea as $anode)
+                                @foreach($anodeall as $anode)
                                 <option value="{{$anode['id']}}">
                                     <p>#{{$anode['id']}}</p>
                                 </option>
@@ -482,17 +416,14 @@
                         </div>
 
                         <input type="hidden" id="idED" name="id"><br>
-                        <?php
-                        $anodePrt = $anodes->where('id', $anode['parent_id'])->first();
-                        $parentRow = $anodePrt->arow_id;
-                        $nodeRow = 1 + $parentRow;
-                        ?>
-                        @isset($parentRow)
-                        <input type="hidden" id="arow_id" name="arow_id" value='<?php echo $nodeRow ?>'><br>
-                        @endisset
+                        
 
-                        <div class="w-fit mx-auto ">
-                            <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24 rounded text-black" type="submit" id="submitNode">Submit</button>
+                        <div id="rowED">
+                        <input type="hidden" name="arow_id" value='6'><br>
+                        </div>
+
+                        <div class="w-fit mx-auto " >
+                            <button class="bg-blue-400 hover:bg-blue-800 mx-auto p-2 w-24 rounded text-black" type="submit" id="submitNodeED" >Submit</button>
                         </div>
                     </form>
 
@@ -505,6 +436,8 @@
     </div>
     <!-- ========= SideBar ============ -->
 
+    
+    <script src='{{ asset("customjs/anode_functions.js") }}'></script>
 
 </body>
 

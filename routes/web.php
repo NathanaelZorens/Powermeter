@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AcolController;
 use App\Http\Controllers\AnodeController;
-
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\HistoryController;
 use App\Models\Acol;
 use App\Models\Anode;
@@ -99,11 +99,13 @@ Route::get('/fin', function () {
     $anodesX = Anode::all();
     $anodesXX = Anode::orderby('id','ASC')->get();
     $anodes = Anode::orderby('arow_id','ASC')->get();
+    $anodeall = Anode::orderby('id','ASC')->get();
+
     
 
     //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
     
-    return view('scada.testFurnish', ['acols' => $acols, 'arows' => $arows, 'anodes' => $anodes]);
+    return view('scada.testFurnish', ['acols' => $acols, 'arows' => $arows, 'anodes' => $anodes, 'anodeall' => $anodeall]);
 
 })->name('fin');
 
@@ -130,3 +132,18 @@ Route::get('/dash', function () {
 Route::resource('/columns', AcolController::class);
 
 Route::resource('/anodes', AnodeController::class);
+
+Route::get('/getParent', [DataController::class,'showData']);
+
+Route::get('/getParentED', [DataController::class,'showDataED']);
+Route::get('/getParentEDFirstClick', [DataController::class,'showDataEDFirstClick']);
+
+Route::get('/getRow', [DataController::class,'getRow']);
+
+Route::get('/getDeleteData', [DataController::class,'getDeleteData']);
+Route::get('/getAddChildData', [DataController::class,'getAddChildData']);
+Route::get('/getEditData', [DataController::class,'getEditData']);
+
+
+
+

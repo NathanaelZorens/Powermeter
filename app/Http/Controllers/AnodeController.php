@@ -66,18 +66,25 @@ class AnodeController extends Controller
     public function store(Request $request)
     {
         //
+        //$anodeall = Anode::orderby('id','ASC')->get();
+ 
+        
+
         $validatedData= $request->validate([
             'name' => 'required|max:255',
             'color' => 'required|max:255',
             'parent_id' => 'required|max:255',
             'acol_id' => 'required|max:255',
+            'arow_id' => 'required|max:255'
         ]);
 
         Anode::create($validatedData);
 
         
 
-        return redirect('/anodes');
+        // return redirect('/anodes');
+        return redirect()->back();
+
     }
 
     /**
@@ -125,8 +132,8 @@ class AnodeController extends Controller
 
         Anode::where('id', $anode->id)->update($validatedData);
 
+        return redirect()->back();
         
-        return redirect('/anodes');
     }
 
     /**
@@ -137,6 +144,8 @@ class AnodeController extends Controller
         //
         Anode::destroy($anode->id);
 
-        return redirect('/anodes');
+        return redirect()->back();
+
+
     }
 }

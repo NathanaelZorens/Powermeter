@@ -12,7 +12,7 @@ class Anode extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','color','acol_id','parent_id'];
+    protected $fillable = ['name','color','acol_id', 'arow_id','parent_id'];
 
     public function acol(): BelongsTo
     {

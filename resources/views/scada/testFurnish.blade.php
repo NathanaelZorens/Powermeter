@@ -5,31 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src='{{ asset("customjs/diagram_functions.js") }}'></script>
 
 </head>
 
 
-<script>
-    function showSide(name,color) {
-        document.getElementById("sideBar").style.display = "block";
-        //document.getElementById("sideBar").style.position = "fixed";
-
-
-        var newName = name;
-        document.getElementById('rectName').innerHTML = "Nama: " + newName;
-        document.getElementById('sideBarI').style.borderColor= color;
-
-
-    }
-
-    function hideSide() {
-        document.getElementById("sideBar").style.display = "none";
-    }
-
-    line=`<x-block-line-v></x-block-line-v>`;
-    downL=``;
-</script>
 
 
 
@@ -45,12 +26,14 @@
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
 
-        <div class=" mx-2 ">
+        <div class=" mx-2 my-4">
 
 
 
             <x-block-rect color="white" id="0" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
             <x-block-line-v></x-block-line-v>
+            <br>
+            
 
         </div>
 
@@ -274,6 +257,7 @@
 
 
 
+<script src='{{ asset("customjs/diagram_functions.js") }}'></script>
 
 
 </body>
