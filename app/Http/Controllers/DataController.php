@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Acol;
 use App\Models\Anode;
+use App\Models\Arow;
 use Illuminate\Http\Request;
 
 class DataController extends Controller
@@ -71,30 +72,73 @@ class DataController extends Controller
     public function showDataEDFirstClick(Request $request) {  
         $data=$request->all();
         $anodeall=Anode::where('acol_id',$data['value'])->get();
+        $acols=Acol::all();
         $oldVal=$data['oldParent'];
+        $oldValCol=$data['value'];
         $currentNode=Anode::where('id',$data['id'])->first();
         $parent=$currentNode->parent_id;
+
         $outputDiv='';
+        $outputDivCol='';
 
-        $outputDiv='
-                                <option selected value=';
-                                $outputDiv.= $oldVal; 
-                                $outputDiv.=' id=selectedParent>' ;
-        $outputDiv .=$oldVal; 
-        $outputDiv .='</option>
-                                
-                    ';
+        
+        if(Anode::where('parent_id',$data['id'])->exists()){
+            $outputDiv = '
+            <option selected value=';
+            $outputDiv .= $oldVal;
+            $outputDiv .= ' id=selectedParent>';
+            $outputDiv .= $oldVal;
+            $outputDiv .= '</option>';
+
+            $outputDiv .= '<option disabled >!-cannot change if has child-!</option>';
+
+            $outputDivCol = '
+            <option selected value=';
+            $outputDivCol .= $oldValCol;
+            $outputDivCol .= ' id=selectedColumn>';
+            $outputDivCol .= $oldValCol;
+            $outputDivCol .= '</option>'; 
+
+            $outputDivCol .= '<option disabled>!-cannot change if has child-!</option>';
+
+        } 
+        else {
+            $outputDiv = '
+            <option selected value=';
+            $outputDiv .= $oldVal;
+            $outputDiv .= ' id=selectedParent>';
+            $outputDiv .= $oldVal;
+            $outputDiv .= '</option>';
 
 
-        foreach($anodeall as $anode){
-        $outputDiv .= '<option value="'.$anode->id.'" id="selectParent">
-                                    <p>#'.$anode->id.'</p>
-                                </option>';
+            foreach ($anodeall as $anode) {
+                $outputDiv .= '<option value="' . $anode->id . '" id="selectParent">
+                <p>#' . $anode->id . '</p>
+            </option>';
+            }
+
+            $outputDivCol = '
+            <option selected value=';
+            $outputDivCol .= $oldValCol;
+            $outputDivCol .= ' id=selectedColumn>';
+            $outputDivCol .= $oldValCol;
+            $outputDivCol .= '</option>';
+            
+            foreach ($acols as $acol) {
+                $outputDivCol .= '<option value="' . $acol->id . '" id="selectColumn">
+                <p>' . $acol->name . '</p>
+            </option>';
+            }
+
         }
+
+
+        
 
         return response()->json([
             "anodeall" => $anodeall,
             "outputDiv"=> $outputDiv, 
+            "outputDivCol"=> $outputDivCol, 
             "parent" => $parent
         ]);
         
@@ -106,7 +150,16 @@ class DataController extends Controller
         $data=$request->all();
         $parentNode=Anode::where('id',$data['parentId'])->first();
         $currentNodeRow=($parentNode->arow_id) + 1;
-                        
+        $newName="Row$currentNodeRow";
+        if(Arow::where('id',$currentNodeRow)->count()<1){
+            Arow::create([
+                'id' => $currentNodeRow,
+                'name' => $newName
+            ]);
+        }
+
+
+
         $outputDiv='<input type="hidden" name="arow_id" value='; 
         $outputDiv.=$currentNodeRow;
         $outputDiv.='><br>';
@@ -159,9 +212,18 @@ class DataController extends Controller
         $outputDivParent.=$nodeId;
         $outputDivParent.='</option>';
 
+        $newName="Row$currentNodeRow";
+        if(Arow::where('id',$currentNodeRow)->count()<1){
+            Arow::create([
+                'id' => $currentNodeRow,
+                'name' => $newName
+            ]);
+        }
+
         $outputDivRow='<input type="hidden" name="arow_id" value='; 
         $outputDivRow.=$currentNodeRow;
         $outputDivRow.='><br>';
+
 
 
 
@@ -194,31 +256,52 @@ class DataController extends Controller
         $parentList=Anode::where('acol_id',$nodeCol)->get();
 
         //$currentNodeRow=($anodeall->arow_id)+1;
-        
-        $outputDivCol='<option  selected value='; 
-        $outputDivCol.=$nodeCol;
-        $outputDivCol.=' id="selectedColumn" >';
-        $outputDivCol.=$nodeCol;
-        $outputDivCol.='</option>';
+        if(Anode::where('parent_id',$anodeall->id)->exists()){
+            $outputDivCol='<option  selected value='; 
+            $outputDivCol.=$nodeCol;
+            $outputDivCol.=' id="selectedColumn" >';
+            $outputDivCol.=$nodeCol;
+            $outputDivCol.='</option>';
 
-        foreach($acols as $acol){
-        $outputDivCol .= '<option value="'.$acol->id.'" id="selectColumn">
-            <p>'.$acol->name.'</p>
-        </option>';
+            $outputDivCol .= '<option disabled >!-cannot change if has child-!</option>';
+
+
+            $outputDivParent='<option  selected value='; 
+            $outputDivParent.=$nodeParent;
+            $outputDivParent.=' id="selectedNode" >#';
+            $outputDivParent.=$nodeParent;
+            $outputDivParent.='</option>';
+
+            $outputDivParent .= '<option disabled >!-cannot change if has child-!</option>';
+
         }
-        
-
-        $outputDivParent='<option  selected value='; 
-        $outputDivParent.=$nodeParent;
-        $outputDivParent.=' id="selectedNode" >#';
-        $outputDivParent.=$nodeParent;
-        $outputDivParent.='</option>';
-
-        foreach ($parentList as $anode) {
-            $outputDivParent .= '<option value="' . $anode->id . '" id="selectParent">
-                                        <p>#' . $anode->id . '</p>
-                                    </option>';
+        else{
+            $outputDivCol='<option  selected value='; 
+            $outputDivCol.=$nodeCol;
+            $outputDivCol.=' id="selectedColumn" >';
+            $outputDivCol.=$nodeCol;
+            $outputDivCol.='</option>';
+    
+            foreach($acols as $acol){
+            $outputDivCol .= '<option value="'.$acol->id.'" id="selectColumn">
+                <p>'.$acol->name.'</p>
+            </option>';
+            }
+            
+    
+            $outputDivParent='<option  selected value='; 
+            $outputDivParent.=$nodeParent;
+            $outputDivParent.=' id="selectedNode" >#';
+            $outputDivParent.=$nodeParent;
+            $outputDivParent.='</option>';
+    
+            foreach ($parentList as $anode) {
+                $outputDivParent .= '<option value="' . $anode->id . '" id="selectParent">
+                                            <p>#' . $anode->id . '</p>
+                                        </option>';
+            }
         }
+       
 
 
         $outputDivRow='<input type="hidden" name="arow_id" value='; 
@@ -240,4 +323,15 @@ class DataController extends Controller
         
     }
 
+    //Acols View
+    public function getAcolDataED(Request $request){
+        $data=$request->all();
+        $acols=Acol::where('id',$data['id'])->first();
+        $acolName=$acols->name;
+
+        return response()->json([
+            "acolName"=>$acolName,
+            
+        ]);
+    }
 }

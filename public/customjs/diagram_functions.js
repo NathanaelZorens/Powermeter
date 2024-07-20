@@ -1,6 +1,8 @@
 line=`<x-block-line-v></x-block-line-v>`;
 downL=``;
 
+
+
 function showSide(name,color) {
     document.getElementById("sideBar").style.display = "block";
     //document.getElementById("sideBar").style.position = "fixed";
@@ -281,3 +283,18 @@ parentED.addEventListener("change",
         getRowED();
     }
   )
+//================================================================================
+
+
+function confirmDelete() {
+    let text = "Are you sure? \nDeleting a Node will also Delete ALL CHILD NODES of that node.\nContinue Delete?";
+    if (confirm(text)) {
+        console.log('deleting...');
+        return true
+    } else {
+            console.log('canceled');
+            return false
+    }
+    //confirm(text)
+
+}

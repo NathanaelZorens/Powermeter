@@ -47,13 +47,13 @@ $n = "$name";
 <div class="">
     <!-- ========= SideBar ============ -->
     <div class="z-50" id="sideBar" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-52 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
-            <h1 class="mt-5 mx-auto h-fit text-xl md:text-3xl font-bold">Detail</h1>
+            <h1 class="mt-5 mx-auto h-fit text-xl md:t  ext-3xl font-bold">Detail</h1>
 
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-3 md:py-10 mx-auto my-3 w-full md:w-64 mt-24 md:mt-52 border-2 border-solid md:border-dashed border-white" id="detailBox">
 
-                <div class="m-3 p-2">
+                <div class="m-3 p-2 ">
 
 
                     <h1 class="text-xl font-bold" id="rectName">name</h1>
@@ -95,7 +95,7 @@ $n = "$name";
                                 @method('delete')
                                 @csrf
                                 <input type="hidden" name="destinaton" value="dia">
-                                <button class="bg-red-600 m-2 px-2 text-sm w-full flex rounded border-solid border border-white">
+                                <button class="bg-red-600 m-2 px-2 text-sm w-full flex rounded border-solid border border-white" onclick="return confirmDelete()">
                                     <div class="mr-auto flex">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6 m-auto">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -122,7 +122,7 @@ $n = "$name";
                 </div>
             </div>
 
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 text-black rounded" onclick="hideSide()">Hide</button>
+            <button class="mt-4 mx-auto w-24 md:w-32 h-10 bg-red-300 hover:bg-red-500 text-black rounded" onclick="hideSide()">Hide</button>
 
         </div>
     </div>
@@ -131,13 +131,13 @@ $n = "$name";
 
     <!-- ========= SideBar: for EDIT ============ -->
     <div class="z-50 " id="sideBarED" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-52 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Edit Node</h1>
 
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-3 md:py-10 mx-auto my-3 w-full md:w-64 mt-24 md:mt-52 border-2 border-solid md:border-dashed border-white" id="detailBox">
 
-                <div class="m-auto w-fit">
+                <div class="m-auto w-full md:w-fit">
 
                     <form action="/anodes" id="editForm" method="post">
                         @csrf
@@ -145,7 +145,7 @@ $n = "$name";
 
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="nameED" name="name" ><br>
+                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameED" name="name" ><br>
                         </div>
 
 
@@ -214,7 +214,7 @@ $n = "$name";
                 </div>
 
             </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
+            <button class="mt-4 mx-auto w-24 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
 
         </div>
     </div>
@@ -223,19 +223,19 @@ $n = "$name";
 
     <!-- ========= SideBar: for Add ============ -->
     <div class="z-50 " id="sideBarAdd" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-52 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Add Child Node</h1>
 
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-3 md:py-10 mx-auto my-3 w-full md:w-64 mt-24 md:mt-52 border-2 border-solid md:border-dashed border-white" id="detailBox">
 
-                <div class="m-auto w-fit">
+                <div class="m-auto w-full md:w-fit">
 
                     <form action="/anodes" id="addForm" method="post">
                         @csrf
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="nameAdd" name="name"><br>
+                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameAdd" name="name"><br>
                         </div>
 
 
@@ -304,7 +304,7 @@ $n = "$name";
                 </div>
 
             </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideAdd()">Cancel</button>
+            <button class="mt-4 mx-auto w-24 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideAdd()">Cancel</button>
 
         </div>
     </div>
@@ -315,7 +315,7 @@ $n = "$name";
 
 
 
-    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-32 h-full md:h-fit  z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
+    <div class="mx-auto rounded-lg w-16 overflow-clip md:w-32 h-full md:h-fit  z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
         <div class="">

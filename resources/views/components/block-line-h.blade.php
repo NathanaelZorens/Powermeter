@@ -1,5 +1,5 @@
 <!-- ================HorizLine============== -->
-<div class="w-fit md:w-fit h-fit m-auto md:m-auto hover:bg-gray-400">
+<div class="w-fit md:w-fit h-fit m-auto md:m-auto ">
     <svg class="" width="100" height="50" viewBox="0 0 100 50">
         <line class="" x1="0" y1="25" x2="100" y2="25" style="stroke:#44ff00;stroke-width:2" />
     </svg>

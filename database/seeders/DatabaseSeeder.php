@@ -234,7 +234,7 @@ class DatabaseSeeder extends Seeder
 
         Anode::create([
             'name' => 'Node23',
-            'color' => 'navy',
+            'color' => 'blue',
             'acol_id'=> '3',
             'arow_id'=> '5',
             'parent_id'=>'22'
@@ -242,7 +242,7 @@ class DatabaseSeeder extends Seeder
 
         Anode::create([
             'name' => 'Node24',
-            'color' => 'navy',
+            'color' => 'blue',
             'acol_id'=> '3',
             'arow_id'=> '5',
             'parent_id'=>'22'

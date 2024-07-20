@@ -1,3 +1,15 @@
+function confirmDelete() {
+    let text = "Are you sure? \nDeleting a Node will also Delete ALL CHILD NODES of that node.\nContinue Delete?";
+    if (confirm(text)) {
+        console.log('deleting...');
+        return true
+    } else {
+         console.log('canceled');
+         return false
+    }
+    //confirm(text)
+
+}
 
 function showSide() {
     document.getElementById("sideBarED").style.display = "none";
@@ -58,10 +70,17 @@ function showSideED(id, name, acol, parent, color) {
             console.log($anodeall);
 
             $out=response['outputDiv']
-            // $outval=response['outputValue']
+            $outC=response['outputDivCol']
+
+            console.log($out);
+            console.log($outC);
+
+            //$outval=response['outputValue']
             
             //document.getElementById("selectedParent").value = response['parent']
             document.getElementById("parentED").innerHTML= $out
+            document.getElementById("columnED").innerHTML= $outC
+
             // document.getElementById("parentED").innerHTML= $outval
 
         

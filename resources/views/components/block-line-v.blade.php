@@ -9,7 +9,7 @@
 </div> -->
 <!-- ================VerticLine============== -->
 
-<div class="w-32 md:w-32 h-fit mx-auto md:mx-auto justify-center hover:bg-gray-400 overflow-visible">
+<div class="w-32 md:w-32 h-fit mx-auto md:mx-auto justify-center  overflow-visible">
     <svg class="m-auto overflow-visible" width="100" height="50" viewBox="0 0 100 50">
         <defs>
             <marker id="circle" markerWidth="70" markerHeight="70" refX="62" refY="30">

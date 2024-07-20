@@ -35,26 +35,26 @@
 
     <div class="mx-auto mt-4" id="nodeOptions">
         <div class="bg-gray-700 rounded mb-2 border-gray-400 border-2 border-solid flex">
-            <button class="border-2 border-gray-300 border-solid w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSide()">
+            <button class="border-2 border-gray-300 border-solid w-12 md:w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSide()">
                 <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 m-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
 
-                    <p class="m-auto">Add</p>
+                    <p class="m-auto hidden md:block">Add</p>
 
                 </div>
             </button>
 
             <div class="flex" id="searchOpt">
-                <button class="border-2 border-gray-300 border-solid w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSearch()" id="searchButton" style="display: block;">
+                <button class="border-2 border-gray-300 border-solid w-12 md:w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSearch()" id="searchButton" style="display: block;">
                     <div class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 m-auto">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
 
 
-                        <p class="m-auto">Search</p>
+                        <p class="m-auto hidden md:block">Search</p>
 
                     </div>
                 </button>
@@ -70,9 +70,9 @@
 
                             </select><br>
                             <p class="text-lg font-bold my-auto mx-2">:</p>
-                            <input class="w-28 h-8 m-auto text-black p-1 border-2 border-gray-300 border-solid bg-gray-200 hover:bg-white focus:bg-white rounded" type="text" id="search" name="search" placeholder="search...">
+                            <input class="w-16 md:w-28 h-8 m-auto text-black p-1 border-2 border-gray-300 border-solid bg-gray-200 hover:bg-white focus:bg-white rounded" type="text" id="search" name="search" placeholder="search...">
                             <div class="w-fit my-auto ml-2">
-                                <button class="border-2 border-gray-300 border-solid w-24 p-1 mx-auto my-auto h-full bg-gray-700 hover:bg-gray-600 text-white rounded text-sm" type="submit" id="submitSearch">Search</button>
+                                <button class="border-2 border-gray-300 border-solid w-fit md:w-24 p-1 mx-auto my-auto h-full bg-gray-700 hover:bg-gray-600 text-white rounded text-sm" type="submit" id="submitSearch">Search</button>
                             </div>
                         </form>
                     </div>
@@ -80,7 +80,7 @@
             </div>
 
             <div class="flex" id="sortOpt">
-                <button class="right border-2 border-gray-300 border-solid w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSort()" id="sortButton" style="display: block;">
+                <button class="right border-2 border-gray-300 border-solid w-12 md:w-24 p-1 m-4 h-12 bg-gray-800 hover:bg-gray-400 rounded" onclick="showSort()" id="sortButton" style="display: block;">
                     <div class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 m-auto">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
@@ -88,7 +88,7 @@
 
 
 
-                        <p class="m-auto">Sort by</p>
+                        <p class="m-auto hidden md:block">Sort by</p>
 
                     </div>
                 </button>
@@ -218,7 +218,7 @@
                             <form action="/anodes/{{$anode->id}}" method="post">
                                 @method('delete')
                                 @csrf
-                                <button class="bg-red-600 m-2 px-2 text-sm flex rounded border-solid border border-white">
+                                <button class="bg-red-600 m-2 px-2 text-sm flex rounded border-solid border border-white" onclick="return confirmDelete()">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6 m-auto">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                     </svg>
@@ -249,23 +249,23 @@
 
 
 
-    <p class="text-yellow-200 bg-black">test</p>
+    <!-- <p class="text-yellow-200 bg-black">test</p> -->
 
     <!-- ========= SideBar Add============ -->
     <div class="z-50 " id="sideBar" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-52 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Add Node</h1>
 
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-3 md:py-10 mx-auto my-3 w-full md:w-64 mt-32 md:mt-52 border-2 border-solid md:border-dashed border-white" id="detailBox">
 
-                <div class="m-auto w-fit">
+                <div class="m-auto w-fit md:w-fit ">
 
                     <form method="post" action="/anodes">
                         @csrf
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="name" name="name"><br>
+                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="name" name="name"><br>
                         </div>
 
                         <div class="m-2">
@@ -331,7 +331,7 @@
                 </div>
 
             </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSide()">Cancel</button>
+            <button class="mt-4 mx-auto w-24 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSide()">Cancel</button>
 
         </div>
     </div>
@@ -341,13 +341,13 @@
 
     <!-- ========= SideBar: for EDIT ============ -->
     <div class="z-50 " id="sideBarED" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
+        <div class="fixed z-50 top-0 right-0 w-52 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
 
             <h1 class="mt-5 mx-auto h-fit text-xl md:text-xl font-bold">Edit Node</h1>
 
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
+            <div class="py-3 md:py-10 mx-auto my-3 w-full md:w-64 mt-32 md:mt-52 border-2 border-solid md:border-dashed border-white" id="detailBox">
 
-                <div class="m-auto w-fit">
+                <div class="m-auto w-full md:w-fit">
 
                     <form action="/anodes" id="editForm" method="post">
                         @csrf
@@ -355,7 +355,7 @@
 
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1" type="text" id="nameED" name="name"><br>
+                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameED" name="name"><br>
                         </div>
 
                         <div class="m-2">
@@ -430,7 +430,7 @@
                 </div>
 
             </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
+            <button class="mt-4 mx-auto w-24 md:w-32 h-10 bg-red-300 hover:bg-red-500 rounded text-black" onclick="hideSideED()">Cancel</button>
 
         </div>
     </div>

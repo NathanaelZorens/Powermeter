@@ -17,7 +17,7 @@
 
     <div class="m-auto w-fit">
 
-        <form method="post" action="/columns">
+        <form method="post" action="/acols">
             @csrf
             <div class="m-2">
                 <label for="name">Nama:</label><br>

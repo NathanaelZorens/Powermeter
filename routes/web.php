@@ -9,9 +9,13 @@ use App\Models\Anode;
 use App\Models\Arow;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home.index');
+// })->name('home');
+
+ Route::get('/', function () {
+     return redirect ('/fin');
+ });
 
 Route::group(['prefix'=> '/history'], function () {
 
@@ -129,7 +133,7 @@ Route::get('/dash', function () {
 
 //Route::get('/columns', [AcolController::class, 'index']);
 //Route::get('/columns/create', [AcolController::class, 'create'])->name('columns.create');
-Route::resource('/columns', AcolController::class);
+Route::resource('/acols', AcolController::class);
 
 Route::resource('/anodes', AnodeController::class);
 
@@ -143,6 +147,8 @@ Route::get('/getRow', [DataController::class,'getRow']);
 Route::get('/getDeleteData', [DataController::class,'getDeleteData']);
 Route::get('/getAddChildData', [DataController::class,'getAddChildData']);
 Route::get('/getEditData', [DataController::class,'getEditData']);
+Route::get('/getAcolDataED', [DataController::class,'getAcolDataED']);
+
 
 
 

@@ -142,6 +142,8 @@ class AnodeController extends Controller
     public function destroy(Anode $anode)
     {
         //
+        Anode::where('parent_id', $anode->id)->delete();
+
         Anode::destroy($anode->id);
 
         return redirect()->back();

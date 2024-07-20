@@ -26,7 +26,7 @@
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
 
-        <div class=" mx-2 my-4">
+        <div class=" mx-2 my-4 hidden">
 
 
 

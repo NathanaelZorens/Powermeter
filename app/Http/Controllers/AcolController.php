@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Acol;
+use App\Models\Anode;
 use Illuminate\Http\Request;
 
 class AcolController extends Controller
@@ -13,9 +14,21 @@ class AcolController extends Controller
     public function index()
     {
         //
-        $acols = Acol::all();
+        
 
-        return view('scada.columns.index', ['acols' => $acols]);
+        if(request()->has('search'))
+        {
+
+            $acols= Acol::orderby('id','ASC')->where('name','like','%' . request()->get('search','') . '%')->orWhere('id','like','%' . request()->get('search','') . '%')->get();
+
+        }
+
+        else{
+            $acols = Acol::all();
+        }
+
+
+        return view('scada.acols.index', ['acols' => $acols]);
     }
 
     /**
@@ -26,7 +39,8 @@ class AcolController extends Controller
         //
         $acols = Acol::all();
 
-        return view('scada.columns.create', ['acols' => $acols]);
+
+        return view('scada.acols.create', ['acols' => $acols]);
     }
 
     /**
@@ -43,7 +57,7 @@ class AcolController extends Controller
 
         
 
-        return redirect('/columns');
+        return redirect('/acols');
         // return response()->json([
         //     "key"=> $request->all()
         // ]);
@@ -74,6 +88,16 @@ class AcolController extends Controller
     public function update(Request $request, Acol $acol)
     {
         //
+        $rules = [ 
+            'name' => 'required|max:255',
+        ];
+
+
+        $validatedData= $request->validate($rules);
+
+        Acol::where('id', $acol->id)->update($validatedData);
+
+        return redirect()->back();
     }
 
     /**
@@ -82,7 +106,12 @@ class AcolController extends Controller
     public function destroy(Acol $acol)
     {
         //
+        Anode::where('acol_id', $acol->id)->delete();
+        
+        //Anode::destroy($nodes);
+
         Acol::destroy($acol->id);
+
 
         return redirect()->back();
     }

@@ -11,7 +11,7 @@ class Arow extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['id','name'];
 
     public function anodes(): HasMany
     {
