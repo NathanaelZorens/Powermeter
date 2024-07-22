@@ -26,13 +26,9 @@
         <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
 
-        <div class=" mx-2 my-4 hidden">
+        <div class=" mx-2 my-4 ">
 
 
-
-            <x-block-rect color="white" id="0" name="Master" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
-            <x-block-line-v></x-block-line-v>
-            <br>
             
 
         </div>
