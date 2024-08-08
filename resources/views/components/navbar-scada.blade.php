@@ -2,7 +2,7 @@
     <!-- Walk as if you are kissing the Earth with your feet. - Thich Nhat Hanh -->
 </div>
 
-<div class="mb-3 h-12 md:h-12 ">
+<div class="z-50 mb-3 h-12 md:h-12 ">
     <div class="bg-gray-900  p-1 text-lime-500  h-fit flex mb-3 fixed w-screen border-gray-600 border-b-2 ">
         <div class="w-52 bg-gradient-to-br from-gray-600 to-gray-900 flex border-2 border-gray-800 m-0 h-full p-1">
             <div class="m-auto flex">

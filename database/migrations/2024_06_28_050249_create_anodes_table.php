@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('color');
+            $table->string('topic')->nullable()->default(null);
+            $table->string('phase')->default('3');
             $table->unsignedBigInteger('acol_id');
             $table->foreign('acol_id')->references('id')->on('acols');
             //$table->string('arow_id')->default(null);

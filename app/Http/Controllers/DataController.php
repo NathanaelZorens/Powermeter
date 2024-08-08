@@ -248,6 +248,7 @@ class DataController extends Controller
         
         $nodeId=$anodeall->id;
         $nodeName=$anodeall->name;
+        $nodePh=$anodeall->phase;
         $nodeClr=$anodeall->color;        
         $nodeCol=$anodeall->acol_id;
         $nodeRow=$anodeall->arow_id;
@@ -314,6 +315,7 @@ class DataController extends Controller
             "nodeId"=>$nodeId,
             "nodeCol"=>$nodeCol,
             "nodeClr"=>$nodeClr,
+            "nodePh"=>$nodePh,
             "outDivPr"=>$outputDivParent,
             "outDivCol"=>$outputDivCol,
             "outDivRow"=>$outputDivRow

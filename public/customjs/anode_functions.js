@@ -28,12 +28,15 @@ function hideSide() {
 
 
 
-function showSideED(id, name, acol, parent, color) {
+function showSideED(id, name, phase, acol, parent, color) {
     document.getElementById("sideBar").style.display = "none";
     document.getElementById("sideBarED").style.display = "block";
 
     document.getElementById("nameED").value = name
     document.getElementById("nameED").innerHTML = name
+
+    document.getElementById("selectedPhase").value = phase
+    document.getElementById("selectedPhase").innerHTML = phase
 
     document.getElementById("selectedColumn").value = acol
     document.getElementById("selectedColumn").innerHTML = acol

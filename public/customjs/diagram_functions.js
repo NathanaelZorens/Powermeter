@@ -103,6 +103,7 @@ $.ajax({
         $nodeId=response['nodeId'];
         $nodeCol=response['nodeCol'];
         $nodeClr=response['nodeClr'];
+        $nodePh=response['nodePh'];
 
 
         document.getElementById("editForm").action="/anodes/" + $nodeId;
@@ -118,6 +119,8 @@ $.ajax({
 
         document.getElementById("nameED").value=$nodeName;
         document.getElementById("colorED").value=$nodeClr;
+        document.getElementById("phaseED").value=$nodePh;
+
 
         
         document.getElementById("columnED").innerHTML=$outDivCol;

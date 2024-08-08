@@ -3,6 +3,7 @@
 use App\Http\Controllers\AcolController;
 use App\Http\Controllers\AnodeController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\DiagramController;
 use App\Http\Controllers\HistoryController;
 use App\Models\Acol;
 use App\Models\Anode;
@@ -21,6 +22,9 @@ Route::group(['prefix'=> '/history'], function () {
 
     Route::get('/',[HistoryController::class,'index'])->name('history.index');
 });
+
+
+
 
 Route::get('/scada', function () {
     return view('scada.index');
@@ -93,25 +97,11 @@ Route::get('/ele', function () {
 
 })->name('fin');
 
-Route::get('/fin', function () {
 
-    $acols = Acol::all();
-    $arows = Arow::all();
-    
-    //$anodes = Anode::where ('acol_id', '=', '1')->get();
-    
-    $anodesX = Anode::all();
-    $anodesXX = Anode::orderby('id','ASC')->get();
-    $anodes = Anode::orderby('arow_id','ASC')->get();
-    $anodeall = Anode::orderby('id','ASC')->get();
 
-    
+Route::get('/fin', [DiagramController::class, 'index']);
 
-    //return view('scada.diagramtest', ['acols' => Acol::all(), 'anodes' => Anode::all() ]);
-    
-    return view('scada.testFurnish', ['acols' => $acols, 'arows' => $arows, 'anodes' => $anodes, 'anodeall' => $anodeall]);
-
-})->name('fin');
+Route::get('/det/{detail}', [DiagramController::class, 'detail'])->name('det');
 
 
 

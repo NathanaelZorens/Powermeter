@@ -18,25 +18,20 @@
 
 
 
-<body class="flex flex-col  bg-black  w-fit h-full overflow-auto">
+<body class="flex flex-col  bg-black  w-full h-full overflow-auto">
 
     <x-navbar-scada></x-navbar-cada>
 
-        <div class="border-0 border-solid border-white p-2 w-fit overflow-auto m-5">
+        <div class="border-0 border-solid border-white p-2 w-fit h-fit overflow-auto mx-auto md:flex block ">
             <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
 
-            <div class=" mx-2 my-4 ">
 
-
-
-
-            </div>
-
-            <div class="rounded-md border-2 border-solid border-gray-200 block md:flex w-fit md:w-fit h-auto p-0 m-auto md:m-auto overflow-auto">
+            <div class="rounded-md border-2 border-solid border-gray-200 block md:flex w-fit md:w-full h-fit p-0 m-auto md:my-auto md:m-3 overflow-auto">
 
                 @foreach($acols as $acol)
-                <div class="border-0 border-dotted border-green-400 p-3 m-2">
+                
+                <div class="border-0 border-dotted border-green-400 p-3 m-auto ">
                     <!-- <h1 class="text-white">Col</h1> -->
 
                     @foreach($arows as $arow)
@@ -147,9 +142,6 @@
                         cabletype = `<x-block-cable-three></x-block-cable-three>`
                     </script>
                     @endif
-                    
-
-                    
 
 
                     <!-- generate node  ==================================================-->
@@ -207,35 +199,47 @@
                     @endforeach
 
                     @endforeach
+                </div>
+                
+                @endforeach
 
 
-                    <div class="w-fit h-6 border-solid border-0 bg-yellow-500 text-gray-800 hover:bg-yellow-300 hover:text-orange-800 rounded-b-lg">
-                        <a href="{{ route('det',[ 'detail' => $acol->id ]) }}">
-                            <div class="m-auto flex px-1 font-medium">
+                
+            <!-- Detail box -->
+            <div class="border-solid rounded-md border-gray-600 border-2 w-fit h-full md:mx-5 m-auto md:my-auto text-white p-2">
 
-                                <h1 class=" mr-2">See details...</h1>
+                    <div class="w-52 h-full mx-auto my-0 font-bold text-lg">
+                        <ul>
+                            <li>A :</li>
+                            <li>B :</li>
+
+                            <li>C :</li>
+
+                            <li>D :</li>
+
+                            <li>E :</li>
+
+                            <li>F :</li>
+
+                            <li>G :</li>
+
+                        </ul>
 
 
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 m-auto">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                                </svg>
-
-
-
-                            </div>
-                        </a>
                     </div>
                 </div>
 
 
-
-                @endforeach
-
             </div>
+
+            
+
 
 
 
         </div>
+
+
 
 
 

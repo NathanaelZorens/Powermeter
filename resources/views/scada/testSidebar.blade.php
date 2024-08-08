@@ -50,11 +50,18 @@ $n3="test";
         <!-- ========= SideBar ============ -->
 
         
+        
 
         <x-rect-test color="orange" :name="$n3"></x-rect-test>
 
 
     </div>
+
+    <div>
+            <h1>Test Phase Cable</h1>
+
+            <x-block-cable-three></x-block-cable-three>
+        </div>
 
 </body>
 

@@ -148,6 +148,18 @@ $n = "$name";
                             <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameED" name="name" ><br>
                         </div>
 
+                        <div class="m-2">
+                            <label for="phase">Phase:</label><br>
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="phase" id="phaseED">
+                                <option selected id="selectedPhase"> -- select phase type -- </option>
+                                <option value="1">Ph 1</option>
+                                <option value="2">Ph 2</option>
+                                <option value="3">Ph 3</option>
+
+                            </select><br>
+
+                        </div>
+
 
                         <div class="m-2">
                             <label for="column">Column:</label><br>
@@ -236,6 +248,17 @@ $n = "$name";
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
                             <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameAdd" name="name"><br>
+                        </div>
+
+                        <div class="m-2">
+                            <label for="phase">Phase:</label><br>
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="phase" id="phase" >
+                                <option disabled selected value> -- select phase type -- </option>
+                                <option value="1" ><p>Ph 1</p></option>
+                                <option value="2" ><p>Ph 2</p></option>
+                                <option value="3" ><p>Ph 3</p></option>
+                            </select><br>
+
                         </div>
 
 

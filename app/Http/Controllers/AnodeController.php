@@ -7,6 +7,8 @@ use App\Models\Acol;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 
 
 class AnodeController extends Controller
@@ -17,9 +19,6 @@ class AnodeController extends Controller
      */
     public function index()
     {
-        //
-        
-        
         $anodes = Anode::orderby('id','ASC');
         $anodeall = Anode::orderby('id','ASC')->get();
         $anodeallX = Anode::where('acol_id','1')->get();
@@ -70,14 +69,31 @@ class AnodeController extends Controller
  
         
 
-        $validatedData= $request->validate([
-            'name' => 'required|max:255',
-            'color' => 'required|max:255',
-            'parent_id' => 'required|max:255',
-            'acol_id' => 'required|max:255',
-            'arow_id' => 'required|max:255'
+        // $validatedData= $request->validate([
+        //     'name' => 'required|unique|max:255',
+        //     'color' => 'required|max:255',
+        //     'parent_id' => 'required|max:255',
+        //     'acol_id' => 'required|max:255',
+        //     'arow_id' => 'required|max:255'
+        // ]);
+
+        $validator=Validator::make(request()->all(),[
+            'name' => ['required','unique:anodes', 'max:255'],
+            'color' => ['required', 'max:255'],
+            'phase' => ['required', 'max:255'],
+            'parent_id' => ['required', 'max:255'],
+            'acol_id' => ['required', 'max:255'],
+            'arow_id' => ['required', 'max:255']
         ]);
 
+        if ($validator->fails()) {
+            return redirect('/anodes')
+                        ->withErrors($validator)
+                        ->withInput();
+                        
+        }
+
+        $validatedData = $validator->validated();
         Anode::create($validatedData);
 
         
@@ -114,6 +130,7 @@ class AnodeController extends Controller
         $rules = [ 
             'name' => 'required|max:255',
             'color' => 'required|max:255',
+            'phase' => 'required|max:255',
             'parent_id' => 'required|max:255',
             'acol_id' => 'required|max:255',
             'arow_id' => 'required|max:255'
