@@ -22,6 +22,11 @@
 
     <x-navbar-scada></x-navbar-cada>
 
+
+
+
+        </div>
+
         <div class="border-0 border-solid border-white p-2 w-fit h-fit overflow-auto mx-auto md:flex block ">
             <!-- <button class="w-fit bg-yellow-200 text-black p-2" onclick="changeColor('red')">Change</button> -->
 
@@ -30,7 +35,19 @@
             <div class="rounded-md border-2 border-solid border-gray-200 block md:flex w-fit md:w-full h-fit p-0 m-auto md:my-auto md:m-3 overflow-auto">
 
                 @foreach($acols as $acol)
+
+                <div class="ml-2 mt-2 absolute text-gray-200 flex">
+                    <button onclick="javascript:history.back()" class="m-auto hover:text-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 m-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+
+                    </button>
+                    <h1 class="right-0 m-auto text-md font-bold">Column #{{$acol['id']}}</h1>
+                </div>
                 
+                
+
                 <div class="border-0 border-dotted border-green-400 p-3 m-auto ">
                     <!-- <h1 class="text-white">Col</h1> -->
 
@@ -41,8 +58,9 @@
 
                     @if($anode->acol_id == $acol->id and $anode->arow_id == $arow->id)
                     @if ($anode->parent_id==1)
+                    <br/>
                     <div class="my-0 mx-auto w-fit">
-                        <x-block-rect color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                        <x-block-rect-detail color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect-detail>
                         <x-block-line-v></x-block-line-v>
 
                     </div>
@@ -153,12 +171,12 @@
                             `<div id="line{{$anode['id']}}" class="border-green-400 border-0 border-solid w-full mx-auto">` +
                             `<div class="mx-auto border-green-400 border-0 border-solid">` +
                             line +
-                            cabletype+
+                            cabletype +
                             `</div>` +
                             `</div>` +
 
                             `<div class="m-1">
-                                                        <x-block-rect color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect>
+                                                        <x-block-rect-detail color="{{$anode['color']}}" id="{{$anode['id']}}" name="{{$anode['name']}}" desc1="aaaa" desc2="bbbb" desc3="cccc"></x-block-rect-detail>
                                                         </div>
 
                                                         <div>` +
@@ -200,82 +218,43 @@
 
                     @endforeach
                 </div>
-                
+
                 @endforeach
 
 
-                
-            <!-- Detail box -->
-            <div class="border-solid rounded-md border-gray-600 border-2 w-fit h-full md:mx-5 m-auto md:my-auto text-white p-2">
-
-                    <div class="w-52 h-full mx-auto my-0 font-bold text-lg">
-                        <ul>
-                            <li>A :</li>
-                            <li>B :</li>
-
-                            <li>C :</li>
-
-                            <li>D :</li>
-
-                            <li>E :</li>
-
-                            <li>F :</li>
-
-                            <li>G :</li>
-
-                        </ul>
 
 
-                    </div>
-                </div>
+
+                <!-- Detail box -->
+                <!-- <div class="border-solid rounded-md border-gray-600 border-2 w-fit h-full md:mx-5 m-auto md:my-auto text-white p-2">
+
+            <div class="w-52 h-full mx-auto my-0 font-bold text-lg">
+                <ul>
+                    <li>A :</li>
+                    <li>B :</li>
+
+                    <li>C :</li>
+
+                    <li>D :</li>
+
+                    <li>E :</li>
+
+                    <li>F :</li>
+
+                    <li>G :</li>
+
+                </ul>
+
+
+            </div>
+        </div>     -->
+
+
+
 
 
             </div>
 
-            
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-        <!-- <div class="z-50 fixed" id="sideBarX" style="display:none;">
-        <div class="fixed z-50 top-0 right-0 w-32 md:w-72 h-screen overflow-auto text-white bg-gray-800 flex flex-col border-solid border-4 border-white" id="sideBarI">
-            
-            <h1 class="mt-5 mx-auto h-fit text-xl md:text-3xl font-bold">Detail</h1>
-
-            <div class="py-10 mx-auto my-3 w-64 mt-52 md:mt-52 border-2 border-none md:border-dashed border-white" id="detailBox">
-
-                <div class="m-3 p-2">
-
-
-                    <h1 class="text-xl font-bold" id="rectName">name</h1>
-                    <ul>
-                        <li>
-                            Data 1: aa
-                        </li>
-                        <li>
-                            Data 2: aa
-                        </li>
-                        <li>
-                            Data 3: aa
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <button class="mt-4 mx-auto w-12 md:w-32 h-10 bg-red-300 hover:bg-red-500" onclick="hideSide()">Hide</button>
-
-        </div>
-    </div> -->
 
 
 
@@ -287,7 +266,15 @@
 
 
 
-        <script src='{{ asset("customjs/diagram_functions.js") }}'></script>
+
+
+
+
+
+
+
+
+            <script src='{{ asset("customjs/diagram_functions.js") }}'></script>
 
 
 </body>

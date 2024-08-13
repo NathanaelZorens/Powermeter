@@ -57,17 +57,35 @@ $n = "$name";
 
 
                     <h1 class="text-xl font-bold" id="rectName">name</h1>
-                    <ul>
-                        <li>
-                            Data 1: {{$desc1}}
-                        </li>
-                        <li>
-                            Data 2: {{$desc2}}
-                        </li>
-                        <li>
-                            Data 3: {{$desc3}}
-                        </li>
-                    </ul>
+                    <div class="flex mt-3 ml-2">
+                            <ul class="font-medium text-left">
+                                <li>VR-S </li>
+                                <li>VS-T </li>
+                                <li>VT-N </li>
+                                <li>VR-N </li>
+                                <li>VT-N </li>
+                                <li>I-R</li>
+                                <li>I-S</li>
+                                <li>I-T</li>
+                                <li>Freq</li>
+                                <li>PWR</li>
+                            </ul>
+
+
+
+                            <ul class="font-medium text-left ml-2">
+                                <li>: {{$desc1}}</li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc3}} </li>
+                                <li>: {{$desc3}} </li>
+                            </ul>
+                    </div>
                 </div>
 
                 <div class="m-3 p-2">
@@ -145,7 +163,7 @@ $n = "$name";
 
                         <div class="m-2">
                             <label for="name">Nama:</label><br>
-                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameED" name="name" ><br>
+                            <input class="border-black border-solid border h-8 text-black px-1 w-full" type="text" id="nameED" name="name"><br>
                         </div>
 
                         <div class="m-2">
@@ -252,11 +270,17 @@ $n = "$name";
 
                         <div class="m-2">
                             <label for="phase">Phase:</label><br>
-                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="phase" id="phase" >
+                            <select onchange="this.nextElementSibling.value=this.value" class="border-black border-solid border h-8 text-black px-1 w-full" name="phase" id="phase">
                                 <option disabled selected value> -- select phase type -- </option>
-                                <option value="1" ><p>Ph 1</p></option>
-                                <option value="2" ><p>Ph 2</p></option>
-                                <option value="3" ><p>Ph 3</p></option>
+                                <option value="1">
+                                    <p>Ph 1</p>
+                                </option>
+                                <option value="2">
+                                    <p>Ph 2</p>
+                                </option>
+                                <option value="3">
+                                    <p>Ph 3</p>
+                                </option>
                             </select><br>
 
                         </div>
@@ -313,7 +337,7 @@ $n = "$name";
                             </select><br>
                         </div>
 
-                        
+
 
                         <div id="rowAdd">
                             <input type="hidden" name="arow_id" value='6'><br>
@@ -338,26 +362,171 @@ $n = "$name";
 
 
 
-    <div class="mx-auto rounded-lg w-16 overflow-clip md:w-32 h-full md:h-fit  z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
+    <div class="mx-auto rounded-lg w-32 overflow-clip md:w-64 h-full md:h-fit md:p-3  z-0 bg-gray-400 hover:bg-gray-200" style="border-style:solid; border-width:2px; border-color:<?php echo $color ?>;">
 
 
         <div class="">
 
-            <button class="" onclick="showSide('{{$name}}','{{$color}}')" style="display:block">
+            <button class="w-full" onclick="showSide('{{$name}}','{{$color}}')" style="display:block">
                 <div class="m-2">
-                    <div class="flex truncate">
-                        <h4 class="text-gray-900 text-md md:text-lg font-bold mr-1">#{{$id}}</h4>
+                    <div class="w-fit  truncate">
 
-                        <svg class="justify-end" height="20" width="80" xmlns="http://www.w3.org/2000/svg">
+                        <div class="flex absolute">
+                        <h4 class="text-gray-900 text-md md:text-lg font-bold mr-0  my-auto">#{{$id}} </h4>
+
+                        <h4 class="text-gray-900 text-md md:text-lg font-bold mr-0 my-auto hidden md:block">: {{$name}} </h4>
+
+
+                        <svg class="justify-end mt-0" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="10,7 15,19 5,19" style="fill: <?php echo $col ?> ;stroke:black;stroke-width:2" />
+                            
                         </svg>
-                    </div>
-
-                    <div class="hidden md:flex" style="color:black">
-                        <p class="h-fit text-sm">Name: {{$name}}</p>
-
+                        </div>
 
                     </div>
+                    
+                    <br />
+                    
+
+                    <div class="flex mt-3" style="color:black">
+                            <ul class="font-medium text-left">
+                                <li>VR-S </li>
+                                <li>VS-T </li>
+                                <li>VT-N </li>
+                                <li>VR-N </li>
+                                <li>VT-N </li>
+                                <li>I-R</li>
+                                <li>I-S</li>
+                                <li>I-T</li>
+                                <li>Freq</li>
+                                <li>PWR</li>
+                            </ul>
+
+
+
+                            <ul class="font-medium text-left ml-2">
+                                <li>: {{$desc1}}</li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc1}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc2}} </li>
+                                <li>: {{$desc3}} </li>
+                                <li>: {{$desc3}} </li>
+                            </ul>
+                    </div>
+
+                    <!-- <div class="block mt-3" style="color:black">
+                        <div class="w-fit my-auto ml-0 font-medium text-md">
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VR-S: {{$desc1}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VS-T: {{$desc2}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VT-S: {{$desc3}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="w-fit my-auto ml-0 font-medium text-md">
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VS-A: {{$desc1}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VR-A: {{$desc2}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">VT-A: {{$desc3}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="w-fit my-auto ml-0 font-medium text-md">
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">I-R: {{$desc1}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">I-S: {{$desc2}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">I-T: {{$desc3}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="w-fit my-auto ml-0 font-medium text-md">
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">Freq: {{$desc1}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">PWR: {{$desc2}}</p>
+                            </div>
+
+                            <div class="flex w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 m-auto">
+                                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                            </svg>
+
+                            <p class="h-fit  text-left">Data 3: {{$desc3}}</p>
+                            </div>
+
+                        </div>
+                    </div> -->
 
                 </div>
             </button>
@@ -376,3 +545,6 @@ $n = "$name";
 </div>
 
 <!-- border komponen keseluruhan (div) sama border rect-nya svg biar pas pakai nilai yang sama atau selisih 2 (yang svg lebih kecil)  -->
+
+
+<!-- He who is contented is rich. - Laozi -->

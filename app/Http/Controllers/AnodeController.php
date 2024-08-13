@@ -160,11 +160,24 @@ class AnodeController extends Controller
     {
         //
         Anode::where('parent_id', $anode->id)->delete();
-
+        
+        
         Anode::destroy($anode->id);
+
+        // $anodeall = Anode::orderby('id','ASC')->get();
+
+        // foreach($anodeall as $anodea){
+        
+        //     if(Anode::where('id', $anodea->parent_id)->exists()){
+        //         Anode::where('id', $anodea->id)->delete();
+        //     }        
+
+        // };
+        
 
         return redirect()->back();
 
+        
 
     }
 }

@@ -6,16 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class BlockRect extends Component
+class BlockRectDetail extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
+    public function __construct( 
+    
+        public string $color,    
 
-        public string $color,
         
-
         public string $name,
         public string $id,
 
@@ -25,6 +25,7 @@ class BlockRect extends Component
         public string $desc3)
     {
         //
+        
     }
 
     /**
@@ -32,6 +33,6 @@ class BlockRect extends Component
      */
     public function render(): View
     {
-        return view('components.block-rect');
+        return view('components.block-rect-detail');
     }
 }
